@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>내 정보 보기</title>
+    <style>
+        * {
+            font-family: Noto Sans KR;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            width: 1100px;
+            margin: 0 auto;
+            justify-content: center;
+         }
+      
+      header {
+        color: black;
+        padding: 20px;
+        text-align: center;
+      }
+      
+
+
+      nav {
+        float: left;
+        width: 33.33%;
+        border-right: 1px solid #333;  /*구분선*/
+        height: 100vh;
+      }
+      
+      nav ul {
+        float: right;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+      }
+      
+     .menuPart{
+        float:right;
+         margin-top : 80px;
+         margin-bottom: 10px;
+        margin-right: 20px;
+     }
+
+      
+
+      nav li a {
+        color: black;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      
+      nav li a:hover {
+        color: #256BF4 ;
+      }  /* 마우스 올리는*/
+
+
+      
+
+      .right_info {
+            color: rgba(29.000000171363354, 29.000000171363354, 32.00000189244747, 1);
+            position: relative;
+            font-size: 25px;
+            font-weight: 600;
+            margin-top : 30px;
+            margin-bottom: 10px;
+        }
+
+
+      .main {
+        float: left;
+        width: 50%;
+        height: 100vh;
+        padding: 50px;
+        
+      } /* 내기본정보 */
+      
+      
+      .idPart,
+      .namePart,
+      .nicknamePart,
+      .phonePart,
+      .addressPart,
+      .birthPart {
+            background-color: rgba(246.0000005364418, 243.00000071525574, 243.00000071525574, 1);
+            width: 345px;
+            height: 63px;
+            position: relative;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .idArea,
+        .nameArea,
+        .nicknameArea,
+       .phoneArea,
+        .addressArea,
+        .birthArea {
+            width: 344px;
+            height: 45px;
+            position: absolute;
+            left: 16px;
+            top: 9px;
+        }
+
+        .idText,
+        .nameText,
+       .nicknameText,
+        .phoneText,
+        .addressText,
+        .birthText {
+            color: rgba(111.00000098347664, 111.00000098347664, 111.00000098347664, 1);
+            width: 344px;
+            height: 17px;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            text-align: left;
+            font-size: 12px;
+            letter-spacing: -0.20000000298023224;
+        }
+
+        .idInput,
+        .nameInput,
+        .nicknameInput,
+        .phoneNumInput,
+        .addressInput,
+        .birthInput {
+            width: 400px;
+            height: 23px;
+            position: absolute;
+            left: 0px;
+            top: 22px;
+            font-size: 17px;
+        }
+        
+  
+
+      
+      
+      input[type="submit"] {
+        background-color: #256BF4;
+            width: 100px;
+            height: 40px;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+            border: none;
+            color: rgba(255, 255, 255, 1);
+            text-align: center;
+            font-size: 17px;
+            margin-bottom: 30px;
+      }
+      
+      input[type="submit"]:hover {
+        background-color: rgb(255, 255, 255);
+        color: rgba(37.00000159442425, 107.00000122189522, 244.0000006556511, 1);
+      }
+
+
+      .changepasswd {
+            background-color: rgba(37.00000159442425, 107.00000122189522, 244.0000006556511, 1);
+            width: 250px;
+            height: 50px;
+            position: absorlute;
+            top: 465px;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+            border: none;
+            color: rgba(255, 255, 255, 1);
+            text-align: center;
+            font-size: 17px;
+            margin-bottom: 30px;
+        }
+      
+
+         
+     
+      
+    </style>
+
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans KR&display=swap" rel="stylesheet">
+
+  </head>
+  
+  <body>
+    <header>
+      
+    </header>
+    
+    <nav>
+      <ul>
+        
+      <div class=menuPart>
+        <h2>내 정보 보기</h2>
+        <li><a href="#" style="font-weight: bold;">내 기본정보</a></li>
+        <li><a href="#">지원현황 확인</a></li>
+        <li><a href="#">내 포트폴리오 보기</a></li>
+        
+      
+      </div>
+      <li><a href="#" id="disableAccount">회원탈퇴 </a></li>
+        
+       </ul>
+    </nav>
+    
+    <div class="main">
+        <h3 class = "right_info">내 기본 정보</h3>
+      <form>
+
+        <div class=idPart>
+            <div class=idArea>
+                <span class="idText">아이디</span>
+                <div class=idInput>
+                    <input type="text" placeholder="email@editube.com" id="email" class="id" style="border: none; background: transparent;">
+                </div>
+            </div>
+        </div>
+        
+        <button type="submit" class=changepasswd onclick="location.href='changepwd.html'">비밀번호변경</button>
+
+        <div class="namePart">
+            <div class=nameArea>
+                <span class="nameText">이름</span>
+                <div class=nameInput>
+                    <input type="text" placeholder="홍길동" id="name" class="name" style="border: none; background: transparent;">
+                </div>
+            </div>
+
+        </div>
+      
+
+       
+
+        <div class="nicknamePart">
+            <div class=nicknameArea>
+                <span class="nicknameText">닉네임</span>
+                <div class=nicknameInput>
+                    <input type="text" id="nick" class="nick" style="border: none; background: transparent;">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="phonePart">
+            <div class=phoneArea>
+                <span class="phoneText">휴대전화</span>
+                <div class=phoneNumInput>
+                    <input type="tel" id="phone" placeholder="010-9999-9999" class="phone" style="border: none; background: transparent;">
+                </div>
+            </div>
+    
+        </div>
+
+        <div class="addressPart">
+            <div class=addressArea>
+                <span class="addressText">주소</span>
+                <div class=addressInput>
+                    <input type="text" id="address" placeholder="서울특별시 강남구 언주로 508" class="address" style="border: none; background: transparent;">
+                </div>
+            </div>
+
+        </div>
+       
+        
+        <div class="birthPart">
+
+            <div class=birthArea>
+                <span class="birthText">생년월일</span>
+                <div class=birthInput>
+                    <input type="date" id="birthdate" class="birthdate">
+                </div>
+            </div>
+    
+        </div>
+       
+
+        <input type="submit" value="수정완료">
+
+  </div>
+</body>
+</html>

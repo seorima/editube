@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <style>
+        * {
+            font-family: Noto Sans KR;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            position: relative;
+            height: 100vh;
+            width: 100vw;
+        }
+
+
+
+        .changepwd {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transform: translate(-50%,-50%);
+            left: 50%;
+            top: 50%;
+        }
+
+        .loginButton {
+            background-color: rgba(37.00000159442425, 107.00000122189522, 244.0000006556511, 1);
+            width: 345px;
+            height: 61px;
+            position: absorlute;
+            top: 465px;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+            border: none;
+            color: rgba(255, 255, 255, 1);
+            text-align: center;
+            font-size: 17px;
+            margin-bottom: 30px;
+        }
+
+        .currentText,
+        .newText,
+        .renewText {
+            color: rgba(111.00000098347664, 111.00000098347664, 111.00000098347664, 1);
+            width: 344px;
+            height: 17px;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            text-align: left;
+            font-size: 12px;
+            letter-spacing: -0.20000000298023224;
+        }
+
+
+        .currentPart,
+        .newPart,
+        .renewPart {
+            background-color: rgba(246.0000005364418, 243.00000071525574, 243.00000071525574, 1);
+            width: 345px;
+            height: 63px;
+            position: relative;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .currentArea,
+        .newArea,
+        .renewArea {
+            width: 368px;
+            height: 45px;
+            position: absolute;
+            left: 16px;
+            top: 9px;
+        }
+
+        .currentInput,
+        .newInput,
+        .renewInput {
+            color: rgba(159.0000057220459, 159.0000057220459, 159.0000057220459, 1);
+            width: 368px;
+            height: 23px;
+            position: absolute;
+            left: 0px;
+            top: 22px;
+            text-align: left;
+            font-size: 16px;
+            letter-spacing: -0.20000000298023224;
+        }
+
+        
+
+        .changepwdText {
+            color: rgba(29.000000171363354, 29.000000171363354, 32.00000189244747, 1);
+            position: relative;
+            text-align: center;
+            font-size: 36px;
+            font-weight: 600;
+            margin-bottom: 50px;
+        }
+
+        .current,
+        .newpwd,
+        .renewpwd {
+            border: none;
+            background: transparent;
+            color: rgba(159.0000057220459, 159.0000057220459, 159.0000057220459, 1);
+            position: absolute;
+            text-align: left;
+            font-size: 16px;
+
+        }
+
+
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans KR&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="changepwd">
+        <form id="changepwd" name="changepwd" method="POST">
+            <h1 class="changepwdText">비밀번호 변경</h1>
+            <div class=currentPart>
+                <div class=currentArea>
+                    <span class="currentText">현재 비밀번호</span>
+                    <div class=currentInput>
+                        <input type="password" placeholder="••••••••" id="current" style="border: none; background: transparent;" >
+                    </div>
+                </div>
+            </div>
+
+
+            <div class=newPart>
+                <div class=newArea>
+                    <span class="newText">새 비밀번호</span> 
+                    <span class="newInput">
+                        <input type="password" placeholder="••••••••" id="newpwd" style="border: none; background: transparent;" ></span>
+                </div>
+
+            </div>
+
+            <div class=renewPart>
+                <div class=renewArea>
+                    <span class="renewText">새 비밀번호 확인</span>
+                    <span class="renewInput"><input type="password" placeholder="••••••••" id="renewpwd" style="border: none; background: transparent;"></span>
+                </div>
+
+            </div>
+            <button type="submit" class=loginButton>변경하기</button>
+           
+            
+        </form>
+
+        
+    </div>
+</body>
+
+</html>
