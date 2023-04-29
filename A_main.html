@@ -9,10 +9,10 @@
             padding: 0;
         }
         body {
-    width: 1100px;
-    margin: 0 auto;
-    justify-content: center;
-  }
+            width: 1100px;
+            margin: 0 auto;
+            justify-content: center;
+         }
       
       header {
         color: black;
@@ -36,21 +36,26 @@
         margin: 0;
       }
       
-      nav li {
-        float: right;
-        font-size:20px;
-        margin: 20px;
-      } /*옆에 리스트*/
-      
-      h2{
+     .menuPart{
         float:right;
+         margin-top : 80px;
+         margin-bottom: 10px;
         margin-right: 20px;
+     }
+
+      
+
+      nav li.active a {
+        color: black;
+        text-decoration: none;
+        font-weight: bold;
+        font-size : 18px;
       }
 
       nav li a {
         color: black;
         text-decoration: none;
-        font-weight: bold;
+        font-weight: thin;
       }
       
       nav li a:hover {
@@ -58,16 +63,14 @@
       }  /* 마우스 올리는*/
 
 
-      .menuPart{
-        margin-top : 15%;
-       margin-left: 40%;
-      }
+      
 
       .right_info {
             color: rgba(29.000000171363354, 29.000000171363354, 32.00000189244747, 1);
             position: relative;
             font-size: 25px;
             font-weight: 600;
+            margin-top : 30px;
             margin-bottom: 10px;
         }
 
@@ -77,7 +80,8 @@
         width: 50%;
         height: 100vh;
         padding: 50px;
-      }
+        
+      } /* 내기본정보 */
       
       
       .idPart,
@@ -141,17 +145,7 @@
             font-size: 17px;
         }
         
-      label {
-        display: block;
-        margin-bottom: 10px;
-        font-size: 20px;
-        font-weight: bold;
-      }
-      
-
-      
-      
-      input[type="submit"] {
+     input[type="submit"] {
         background-color: #256BF4;
             width: 100px;
             height: 40px;
@@ -189,8 +183,6 @@
             margin-bottom: 30px;
         }
       
-
-         
      
       
     </style>
@@ -209,11 +201,12 @@
         
       <div class=menuPart>
         <h2>내 정보 보기</h2>
-        <li><a href="#" style="font-weight: bold;">내 기본정보</a></li>
-        <li><a href="#">지원현황 확인</a></li>
-        <li><a href="#">내 포트폴리오 보기</a></li>
+        <li class="active"><a href="#" >내 기본정보</a></li>
+        <li><a href="#">회원관리</a></li>
       
       </div>
+
+      <li><a href="#" class="disable">회원탈퇴 </a></li>
        </ul>
     </nav>
     

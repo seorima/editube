@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>내 정보 보기</title>
+    <style>
+        * {
+            font-family: Noto Sans KR;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            width: 1100px;
+            margin: 0 auto;
+            justify-content: center;
+         }
+      
+      header {
+        color: black;
+        padding: 20px;
+        text-align: center;
+      }
+      
+
+
+      nav {
+        float: left;
+        width: 33.33%;
+        border-right: 1px solid #333;  /*구분선*/
+        height: 100vh;
+      }
+      
+      nav ul {
+        float: right;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+      }
+      
+     .menuPart{
+        float:right;
+         margin-top : 80px;
+         margin-bottom: 10px;
+        margin-right: 20px;
+     }
+
+      
+
+     nav li.active a {
+        color: black;
+        text-decoration: none;
+        font-weight: bold;
+        font-size : 18px;
+      }
+
+      nav li a {
+        color: black;
+        text-decoration: none;
+        font-weight: thin;
+      }
+      
+      nav li a:hover {
+        color: #256BF4 ;
+      }  /* 마우스 올리는*/
+
+
+      
+
+      .right_info {
+            color: rgba(29.000000171363354, 29.000000171363354, 32.00000189244747, 1);
+            position: relative;
+            font-size: 25px;
+            font-weight: 600;
+            margin-top : 30px;
+            margin-bottom: 10px;
+        }
+
+
+      .main {
+        float: left;
+        width: 50%;
+        height: 100vh;
+        padding: 50px;
+        
+      } /* 회원탈퇴 */
+      
+      
+     
+
+      .disableAccount {
+            background-color: #256bf4;
+            width: 250px;
+            height: 50px;
+            position: absorlute;
+            top: 465px;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+            border: none;
+            color: rgba(255, 255, 255, 1);
+            text-align: center;
+            font-size: 17px;
+            margin-bottom: 30px;
+            cursor: pointer;
+        }
+
+        .disableAccount:hover {
+        background-color: #0069d9;
+      }
+
+        
+      
+        .currentText,
+        .recurrentText {
+            color: rgba(111.00000098347664, 111.00000098347664, 111.00000098347664, 1);
+            width: 344px;
+            height: 17px;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            text-align: left;
+            font-size: 12px;
+            letter-spacing: -0.20000000298023224;
+        }
+
+
+        .currentPart,
+        .recurrentPart {
+            background-color: rgba(246.0000005364418, 243.00000071525574, 243.00000071525574, 1);
+            width: 345px;
+            height: 63px;
+            position: relative;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .currentArea,
+        .recurrentArea {
+            width: 368px;
+            height: 45px;
+            position: absolute;
+            left: 16px;
+            top: 9px;
+        }
+
+        .currentInput,
+        .recurrentInput {
+            color: rgba(159.0000057220459, 159.0000057220459, 159.0000057220459, 1);
+            width: 368px;
+            height: 23px;
+            position: absolute;
+            left: 0px;
+            top: 22px;
+            text-align: left;
+            font-size: 16px;
+            letter-spacing: -0.20000000298023224;
+        }
+
+        
+
+        .current,
+        .recurrent{
+            border: none;
+            background: transparent;
+            color: rgba(159.0000057220459, 159.0000057220459, 159.0000057220459, 1);
+            position: absolute;
+            text-align: left;
+            font-size: 16px;
+
+        }
+      
+        .container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+		
+		.textbox {
+			width: 500px;
+			height: 200px;
+			margin-bottom: 20px;
+			padding: 10px;
+			border: 2px solid #256BF4; /* 테두리를 두껍게 하고 색상을 변경 */
+			background-color: #FFFFFF; /* 배경색상을 흰색으로 변경 */
+			color: #333333; /* 글자색상을 검정색으로 변경 */
+			font-size: 16px; /* 글자크기를 변경 */
+			resize: none; /* 크기 조절 기능을 비활성화 */
+		}
+		
+		.checkbox {
+			display: flex;
+			align-items: center;
+		}
+		
+		.checkbox label {
+			margin-left: 10px;
+		}
+        .passwdcheck {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+                }
+
+    </style>
+
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans KR&display=swap" rel="stylesheet">
+
+  </head>
+  
+  <body>
+    <header>
+      
+    </header>
+    
+    <nav>
+      <ul>
+        
+      <div class=menuPart>
+        <h2>내 정보 보기</h2>
+        <li><a href="#" >내 기본정보</a></li>
+        <li><a href="#">회원관리</a></li>
+      
+      </div>
+      <li class="active"><a href="#"class="disable">회원탈퇴 </a></li>
+       </ul>
+    </nav>
+    
+    <div class="main">
+        <h3 class = "right_info">회원탈퇴</h3>
+      
+        <div class="container">
+            <textarea class="textbox" placeholder="텍스트를 입력하세요"></textarea>
+            <div class="checkbox">
+                <input type="checkbox" id="agree" name="agree">
+                <label for="agree">동의합니다</label>
+            </div>
+        </div>
+
+
+        <div class="passwdcheck">
+            <div class=currentPart>
+                <div class=currentArea>
+                    <span class="currentText">비밀번호</span>
+                    <div class=currentInput>
+                        <input type="password" placeholder="••••••••" id="current" style="border: none; background: transparent;" >
+                    </div>
+                </div>
+            </div>
+    
+            <div class=recurrentPart>
+                <div class=recurrentArea>
+                    <span class="recurrentText">비밀번호 재입력</span>
+                    <div class=recurrentInput>
+                        <input type="password" placeholder="••••••••" id="recurrent" style="border: none; background: transparent;" >
+                    </div>
+                </div>
+            </div>
+            
+       
+
+        <button type="submit" class=disableAccount >탈퇴하기</button>
+        </div>
+        </div>
+           
+
+
+  </div>
+</body>
+</html>
