@@ -26,7 +26,7 @@
         float: left;
         width: 33.33%;
         border-right: 1px solid #333;  /*구분선*/
-        height: 100vh;
+        height: 150vh;
       }
       
       nav ul {
@@ -82,7 +82,7 @@
         
       } /* 회원탈퇴 */
       
-      hr {
+      .hr1 {
         background:#256BF4;
         height:3px;
         border:0;
@@ -90,8 +90,61 @@
     }
       
      
+    .box1{
+      width: 520px;
+      height: 250px;
+      border: none;
+      float: left;
+      margin: 19px;
+      box-sizing: border-box;
+      background-color: #c9c9c9;
+    }
+    .box2{
+      width: 520px;
+      height: 150px;
+      border: 2px solid #256BF4;
+      float: left;
+      margin: 19px;
+      box-sizing: border-box;
+    }
 
-      
+    .box3{
+      width: 250px;
+      height: 150px;
+      border: none;
+      float: left;
+      margin: 19px;
+      box-sizing: border-box;
+      background-color: #c9c9c9;
+     }
+     
+     .input1{
+      width: 250px;
+      height: 150px;
+      border: 1px solid #000;
+      float: left;
+      margin: 19px;
+      box-sizing: border-box;
+     }
+     .root{
+      display: flex;
+     }
+     .btn {
+        background-color: #256BF4;
+        color: #fff;
+        border: none;
+        padding: 5px 10px;
+        cursor: pointer;
+        border-top-left-radius: 98px;
+        border-top-right-radius: 98px;
+        border-bottom-left-radius: 98px;
+        border-bottom-right-radius: 98px;
+        float: right;
+        margin-bottom: 20px;
+      }
+      .btn:hover {
+        background-color: #0069d9;
+      }
 
     </style>
 
@@ -121,9 +174,40 @@
     <div class="main">
         <h3 class = "right_info">편집영상 제출</h3>
       
-        <hr>
-
-        
+        <hr class="hr1">
+          <div class="box1">
+            직무 : 편집자<br>
+            급여 : 200000원 <br>
+            급여 상세 : 10분당 급여입니다<br>
+            우대사항: 서울 거주자 우대<br>
+            편집툴: 프리미어프로<br>
+            근무 환경: 재택근무<br>
+            복리후생:<br>
+            상세 모집 내용:<br> 
+            구인글 받아오는내용 <br> 
+          </div>
+  
+          <div class="box2"> 
+            편집 영상 제출시 유의 사항 <br>
+            -도용하면 안됩니다.
+            유의사항 <br> 
+          </div>
+          
+          <hr>
+          
+          
+          <h3>편집 영상: <input type="text" placeholder="링크를 입력하세요" ></h3>
+          <div class="root">
+            <div class="box3">
+             유튜브 영상 미리보기 api
+           </div>
+           <div>
+              <input class="input1" type="text" placeholder="구인자에게 하고 싶은 말을 쓰세요 ">
+           </div>
+           
+         </div>
+         <button class="btn">제출하기</button>
+         
            
 
 
