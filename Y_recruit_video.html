@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>내 정보 보기</title>
+    <style>
+        * {
+            font-family: Noto Sans KR;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            width: 1100px;
+            margin: 0 auto;
+            justify-content: center;
+         }
+      
+      header {
+        color: black;
+        padding: 20px;
+        text-align: center;
+      }
+      
+
+
+      nav {
+        float: left;
+        width: 33.33%;
+        border-right: 1px solid #333;  /*구분선*/
+        height: 100vh;
+      }
+      
+      nav ul {
+        float: right;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+      }
+      
+     .menuPart{
+        float:right;
+         margin-top : 80px;
+         margin-bottom: 10px;
+        margin-right: 20px;
+     }
+      
+
+     nav li.active a {
+        color: black;
+        text-decoration: none;
+        font-weight: bold;
+        font-size : 18px;
+      }
+
+      nav li a {
+        color: black;
+        text-decoration: none;
+        font-weight: thin;
+      }
+      
+      nav li a:hover {
+        color: #256BF4 ;
+      }  /* 마우스 올리는*/
+
+
+      
+
+      .right_info {
+            color: rgba(29.000000171363354, 29.000000171363354, 32.00000189244747, 1);
+            position: relative;
+            font-size: 25px;
+            font-weight: 600;
+            margin-top : 30px;
+            margin-bottom: 10px;
+        }
+
+
+      .main {
+        float: left;
+        width: 50%;
+        height: 100vh;
+        padding: 50px;
+        
+      } /* 회원탈퇴 */
+      
+      #mkhr {
+        background:#256BF4;
+        height:3px;
+        border:0;
+        border-radius: 10px 10px 10px 10px;
+    }
+
+    #container_check{
+        margin: 20px;
+    }
+
+    .result_btn {
+        background-color: #256BF4;
+        color: #fff;
+        border: none;
+        padding: 5px 10px;
+        cursor: pointer;
+        border-top-left-radius: 98px;
+        border-top-right-radius: 98px;
+        border-bottom-left-radius: 98px;
+        border-bottom-right-radius: 98px;
+        float: right;
+      }
+      .result_btn:hover {
+        background-color: #0069d9;
+      }
+
+    #container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .textbox {
+        width: 200px;
+        height: 100px;
+        padding: 10px;
+        margin-bottom: 20px;
+      }
+    #bluebox {
+        border: 2px solid #256BF4;
+
+      }
+
+      /* 회색 테두리를 가진 텍스트 상자 스타일 */
+      #memo {
+        border: 2px solid gray;
+
+      }
+     
+
+
+
+      
+
+    </style>
+
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans KR&display=swap" rel="stylesheet">
+
+  </head>
+  
+  <body>
+    <header>
+      
+    </header>
+    
+    <nav>
+      <ul>
+        
+      <div class=menuPart>
+        <h2>내 정보 보기</h2>
+        <li><a href="#" >내 기본정보</a></li>
+        <li class="active"><a href="#">작성한 구인글</a></li>
+        <li><a href="#">경력 인증 요청 확인</a></li>
+      
+      </div>
+      <li ><a href="#">회원탈퇴 </a></li>
+       </ul>
+    </nav>
+    
+    <div class="main">
+        <h3 class = "right_info">지원자 편집영상 확인 (사용자이름) </h3>
+
+        <hr id="mkhr">
+        
+        <div id = container_check>
+            <span>(이름값 받아와야함. 임시) 안경에 김서림</span>
+            <button class="result_btn">결과확인</button>
+          </div>
+
+          <div id = container>
+            <input type="text" id="bluebox" name="bluebox" class="textbox">
+          <input type="text" id="memo" name="memo" class="textbox" placeholder="메모">
+
+          </div>
+
+          <hr>
+
+           
+
+
+  </div>
+</body>
+</html>
