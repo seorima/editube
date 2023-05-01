@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>내 정보 보기</title>
+    <style>
+        * {
+            font-family: Noto Sans KR;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            width: 1100px;
+            margin: 0 auto;
+            justify-content: center;
+         }
+      
+      header {
+        color: black;
+        padding: 20px;
+        text-align: center;
+      }
+      
+
+
+      nav {
+        float: left;
+        width: 33.33%;
+        border-right: 1px solid #333;  /*구분선*/
+        height: 100vh;
+      }
+      
+      nav ul {
+        float: right;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+      }
+      
+     .menuPart{
+        float:right;
+         margin-top : 80px;
+         margin-bottom: 10px;
+        margin-right: 20px;
+     }
+
+      
+
+     nav li.active a {
+        color: black;
+        text-decoration: none;
+        font-weight: bold;
+        font-size : 18px;
+      }
+
+      nav li a {
+        color: black;
+        text-decoration: none;
+        font-weight: thin;
+      }
+      
+      nav li a:hover {
+        color: #256BF4 ;
+      }  /* 마우스 올리는*/
+
+
+      
+
+      .right_info {
+            color: rgba(29.000000171363354, 29.000000171363354, 32.00000189244747, 1);
+            position: relative;
+            font-size: 25px;
+            font-weight: 600;
+            margin-top : 30px;
+            margin-bottom: 10px;
+        }
+
+
+      .main {
+        float: left;
+        width: 50%;
+        height: 100vh;
+        padding: 50px;
+        
+      } /* 회원탈퇴 */
+      
+      
+     
+
+      .disableAccount {
+            background-color: #256bf4;
+            width: 250px;
+            height: 50px;
+            position: absorlute;
+            top: 465px;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+            border: none;
+            color: rgba(255, 255, 255, 1);
+            text-align: center;
+            font-size: 17px;
+            margin-bottom: 30px;
+        }
+
+        
+      
+        .currentText,
+        .recurrentText {
+            color: rgba(111.00000098347664, 111.00000098347664, 111.00000098347664, 1);
+            width: 344px;
+            height: 17px;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            text-align: left;
+            font-size: 12px;
+            letter-spacing: -0.20000000298023224;
+        }
+
+
+        .currentPart,
+        .recurrentPart {
+            background-color: rgba(246.0000005364418, 243.00000071525574, 243.00000071525574, 1);
+            width: 345px;
+            height: 63px;
+            position: relative;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .currentArea,
+        .recurrentArea {
+            width: 368px;
+            height: 45px;
+            position: absolute;
+            left: 16px;
+            top: 9px;
+        }
+
+        .currentInput,
+        .recurrentInput {
+            color: rgba(159.0000057220459, 159.0000057220459, 159.0000057220459, 1);
+            width: 368px;
+            height: 23px;
+            position: absolute;
+            left: 0px;
+            top: 22px;
+            text-align: left;
+            font-size: 16px;
+            letter-spacing: -0.20000000298023224;
+        }
+
+        
+
+        .current,
+        .recurrent{
+            border: none;
+            background: transparent;
+            color: rgba(159.0000057220459, 159.0000057220459, 159.0000057220459, 1);
+            position: absolute;
+            text-align: left;
+            font-size: 16px;
+
+        }
+      
+        .container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+		
+		.textbox {
+			width: 500px;
+			height: 200px;
+			margin-bottom: 20px;
+			padding: 10px;
+			border: 2px solid #256BF4; /* 테두리를 두껍게 하고 색상을 변경 */
+			background-color: #FFFFFF; /* 배경색상을 흰색으로 변경 */
+			color: #333333; /* 글자색상을 검정색으로 변경 */
+			font-size: 16px; /* 글자크기를 변경 */
+			resize: none; /* 크기 조절 기능을 비활성화 */
+		}
+		
+		.checkbox {
+			display: flex;
+			align-items: center;
+		}
+		
+		.checkbox label {
+			margin-left: 10px;
+		}
+        .passwdcheck {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+                }
+
+    </style>
+
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans KR&display=swap" rel="stylesheet">
+
+  </head>
+  
+  <body>
+    <header>
+      
+    </header>
+    
+    <nav>
+      <ul>
+        
+      <div class=menuPart>
+        <h2>내 정보 보기</h2>
+        <li><a href="#" >내 기본정보</a></li>
+        <li><a href="#">지원현황 확인</a></li>
+        <li><a href="#">내 포트폴리오 보기</a></li>
+      
+      </div>
+      <li class="active"><a href="#"class="disable">회원탈퇴 </a></li>
+       </ul>
+    </nav>
+    
+    <div class="main">
+        <h3 class = "right_info">내 포트폴리오</h3>
+        <from id="signupForm" name="signupForm" method="POST">
+        <div>
+            이미지 들어가는 곳 
+        </div>
+
+        <div>
+            이름 : <input type="text" placeholder="이름을 입력하세요" ><br>
+            아이디 : <input type="text" placeholder="아이디를 입력하세요(이메일형식)" ><br>
+            <span class="titleText">성별 : </span>
+            <span class="inputBox">
+              <label><input type="radio" name="gender" value="남"> 남성</label>&nbsp;&nbsp;&nbsp;
+              <label><input type="radio" name="gender" value="여"> 여성</label>
+            </span><br>
+            근무 가능 지역 : <input type="text" placeholder="근무 가능 지역을 입력하세요" ><br>
+            편집 총 시간 : <input type="number" placeholder="편집 총 시간을 입력하세요" ><br>
+            <span class="titleText">편집 툴 : </span>
+                <span class="inputBox">
+                <label><input type="radio" name="editor"> 프리미어 프로</label>
+                <label><input type="radio" name="editor"> 애프터 이펙트</label>
+                <label><input type="radio" name="editor"> 베가스</label>
+                <label><input type="radio" name="editor"> 파이널 컷</label>
+                <label><input type="radio" name="editor"> 파워 디렉터</label>
+                <label><input type="radio" name="editor"> 포토샵</label>
+                <label><input type="radio" name="editor"> 일러스트레이터</label>
+                <label><input type="radio" name="editor"> MaYa</label>
+                <label><input type="radio" name="editor"> Blender</label>
+                </span><br>
+            하고 싶은 말 : <input type="text" placeholder="하고 싶은 말을 적으세요" >
+          </div>
+
+          <div>
+            <h5>유튜버 편집 경력</h5>
+            유튜버 리스트를 받나? 아니면 직접 작성 하나? : <input type="date" name="Deadline"><br>
+          </div>
+          <div>
+            <h5>다른 기업 경력</h5>
+            <input type="text" placeholder="경력을 적으세요" >
+          </div>
+          <div>
+            <h5>편집 영상은 순서대로 위에서부터 표출 됩니다</h5>
+            대표 영상 링크 : <input type="text" placeholder="링크를 입력하세요"><br>
+            편집 영상 링크 :<br><input type="text" placeholder="링크를 입력하세요"><br>
+            <input type="text" placeholder="링크를 입력하세요"><br>
+            <input type="text" placeholder="링크를 입력하세요"><br>
+            <input type="text" placeholder="링크를 입력하세요"><br>
+            <input type="text" placeholder="링크를 입력하세요"><br>
+            <input type="text" placeholder="링크를 입력하세요"><br>
+            <input type="text" placeholder="링크를 입력하세요"><br>
+            <input type="text" placeholder="링크를 입력하세요"><br>
+            <input type="text" placeholder="링크를 입력하세요"><br>
+            <input type="text" placeholder="링크를 입력하세요"><br>
+            <input type="text" placeholder="링크를 입력하세요"><br>
+            <input type="text" placeholder="링크를 입력하세요"><br>
+
+          </div>
+
+        <button type="submit" class=disableAccount >수정 완료</button>
+        </div>
+        </div>
+           
+
+
+  </div>
+</from>
+</body>
+</html>

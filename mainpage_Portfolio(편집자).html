@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>내 정보 보기</title>
+    <style>
+        * {
+            font-family: Noto Sans KR;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            width: 1100px;
+            margin: 0 auto;
+         }
+      
+      header {
+        color: black;
+        padding: 20px;
+        text-align: center;
+      }
+      
+    div {
+        justify-content: center;
+    }
+
+      
+      
+
+      .title {
+            color: rgba(29.000000171363354, 29.000000171363354, 32.00000189244747, 1);
+            position: relative;
+            font-size: 25px;
+            font-weight: 600;
+            margin-top : 30px;
+            margin-bottom: 10px;
+        }
+      
+      hr {
+        background:#256BF4;
+        height:3px;
+        border:0;
+        border-radius: 10px 10px 10px 10px;
+    }
+      
+    </style>
+
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans KR&display=swap" rel="stylesheet">
+
+  </head>
+  
+  <body>
+    <header>
+      
+    </header>
+    
+    
+    <div>
+        <h3 class = "title">제목 : <input type="text" placeholder="제목을 입력하세요" ></h3>
+    </div>
+        <hr>
+        <div>
+            이미지 들어가는 칸
+        </div>
+        <div>
+        이름 : <input type="text" placeholder="이름을 입력하세요" ><br>
+        아이디 : <input type="text" placeholder="아이디를 입력하세요(이메일형식)" ><br>
+        <span class="titleText">성별 : </span>
+        <span class="inputBox">
+          <label><input type="radio" name="gender" value="남"> 남성</label>&nbsp;&nbsp;&nbsp;
+          <label><input type="radio" name="gender" value="여"> 여성</label>
+        </span><br>
+        근무 가능 지역 : <input type="text" placeholder="근무 가능 지역을 입력하세요" ><br>
+        편집 총 시간 : <input type="number" placeholder="편집 총 시간을 입력하세요" ><br>
+        편집툴 : <input type="text" placeholder="편집 툴을 입력하세요" ><br>
+        하고 싶은 말 : <input type="text" placeholder="하고 싶은 말을 적으세요" >
+      </div>
+        <div>
+        대표 영상 들어가는 칸 
+        </div>
+        <div>
+            <h4>유튜브 편집 경력 </h4>
+        </div>
+        <div>
+            <h4>다른 기업 경력 </h4>
+        </div>
+        <hr>
+        희망 급여 : <input type="text" placeholder="희망 급여를 입력 하세요" ><br>
+        희망 근무 형태 : <input type="text" placeholder="희망 근무 형태를 입력하세요" ><br>
+        하고 싶은 말 : <input type="text" placeholder="하고 싶은 말을 적어주세요" ><br>
+        <hr>
+        <div>
+            유튜브 영상 링크 들어가는 곳
+        </div>
+    <button type="submit" class=signUpButton>수정</button>
+    </form>
+</body>
+</html>
