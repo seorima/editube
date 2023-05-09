@@ -160,7 +160,8 @@ footer {
 .nicknamePart,
 .phonePart,
 .addressPart,
-.birthPart {
+.birthPart,
+.detailaddressPart {
     background-color: rgba(246.0000005364418, 243.00000071525574, 243.00000071525574, 1);
     width: 345px;
     height: 63px;
@@ -177,7 +178,8 @@ footer {
 .nicknameArea,
 .phoneArea,
 .addressArea,
-.birthArea {
+.birthArea,
+.detailaddressArea {
     width: 344px;
     height: 45px;
     position: absolute;
@@ -190,7 +192,8 @@ footer {
 .nicknameText,
 .phoneText,
 .addressText,
-.birthText {
+.birthText,
+.detailaddressText {
     color: rgba(111.00000098347664, 111.00000098347664, 111.00000098347664, 1);
     width: 344px;
     height: 17px;
@@ -207,7 +210,8 @@ footer {
 .nicknameInput,
 .phoneNumInput,
 .addressInput,
-.birthInput {
+.birthInput,
+.detailaddressInput {
     width: 400px;
     height: 23px;
     position: absolute;

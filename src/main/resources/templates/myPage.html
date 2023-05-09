@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
   <meta charset="UTF-8">
@@ -59,24 +59,26 @@
 
     <div class="main">
       <h3 class="right_info">내 기본 정보</h3>
-      <form>
+      <form action="/myPage" method="post" modelAttribute="member">
         <div class=idPart>
           <div class=idArea>
             <span class="idText">아이디</span>
             <div class=idInput>
-              <input type="text" placeholder="email@editube.com" id="email" class="email"
-                style="border: none; background: transparent;">
+              <input type="text" placeholder="email@editube.com" id="id" class="email"
+                style="border: none; background: transparent;" th:value="${session.id}" disabled>
             </div>
           </div>
         </div>
-        <button type="submit" class=changepasswd onClick="location.href='changepwd.html'" >비밀번호변경</button>
+        <button type="submit" class=changepasswd >비밀번호변경</button>
 
         <div class="namePart">
           <div class=nameArea>
             <span class="nameText">이름</span>
             <div class=nameInput>
               <input type="text" placeholder="홍길동" id="name" class="name"
-                style="border: none; background: transparent;">
+                style="border: none; background: transparent;"
+                     th:value="${memberDO.name}" name="name"
+              >
             </div>
           </div>
         </div>
@@ -85,17 +87,21 @@
           <div class=nicknameArea>
             <span class="nicknameText">닉네임</span>
             <div class=nicknameInput>
-              <input type="text" id="nick" class="nick" style="border: none; background: transparent;">
+              <input type="text" id="nickname" class="nickname" style="border: none; background: transparent;"
+                     th:value="${memberDO.nickname}" name="nickname" >
             </div>
           </div>
+        </div>
+        <div th:utext="${duplicateNickname}">
         </div>
 
         <div class="phonePart">
           <div class=phoneArea>
             <span class="phoneText">휴대전화</span>
             <div class=phoneNumInput>
-              <input type="tel" id="phone" placeholder="010-9999-9999" class="phone"
-                style="border: none; background: transparent;">
+              <input type="tel" id="phone_number" placeholder="010-9999-9999" class="phone"
+                style="border: none; background: transparent;"
+                     th:value="${memberDO.phone_number}" name="phone_number" >
             </div>
           </div>
         </div>
@@ -105,16 +111,30 @@
             <span class="addressText">주소</span>
             <div class=addressInput>
               <input type="text" id="address" placeholder="서울특별시 강남구 언주로 508" class="address"
-                style="border: none; background: transparent;">
+                style="border: none; background: transparent;"
+                     th:value="${memberDO.address}" name="address" >
             </div>
           </div>
         </div>
+
+        <div class="detailaddressPart">
+          <div class=detailaddressArea>
+            <span class="detailaddressText">상세주소</span>
+            <div class=detailaddressInput>
+              <input type="text" id="detail_address" placeholder="301호" class="detail_addr"
+                     style="border: none; background: transparent;"
+                     th:value="${memberDO.detail_address}" name="detail_address" >
+            </div>
+          </div>
+        </div>
+
 
         <div class="birthPart">
           <div class=birthArea>
             <span class="birthText">생년월일</span>
             <div class=birthInput>
-              <input type="date" id="birthdate" class="birthdate">
+              <input type="date" id="birth" class="birth_date"
+                     th:value="${memberDO.getBirth()}"name="birth" >
             </div>
           </div>
         </div>

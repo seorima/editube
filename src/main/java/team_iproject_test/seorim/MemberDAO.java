@@ -1,8 +1,14 @@
 package team_iproject_test.seorim;
 
+import java.util.List;
+import java.util.Optional;
+
 public interface MemberDAO {
 
-    void update(MemberDO memberdo);
+    void update(UserUpdateRequest userUpdateRequest,String id);
 
-    MemberDO findByEmail(String email);
+    MemberDO findnickname(String nick);
+
+
+    MemberDO findById(String id);
 }
