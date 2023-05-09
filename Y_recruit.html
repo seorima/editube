@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>내 정보 보기</title>
+    <style>
+        * {
+            font-family: Noto Sans KR;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            width: 1100px;
+            margin: 0 auto;
+            justify-content: center;
+         }
+      
+      header {
+        color: black;
+        padding: 20px;
+        text-align: center;
+      }
+      
+
+
+      nav {
+        float: left;
+        width: 33.33%;
+        border-right: 1px solid #333;  /*구분선*/
+        height: 100vh;
+      }
+      
+      nav ul {
+        float: right;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+      }
+      
+     .menuPart{
+        float:right;
+         margin-top : 80px;
+         margin-bottom: 10px;
+        margin-right: 20px;
+     }
+      
+
+     nav li.active a {
+        color: black;
+        text-decoration: none;
+        font-weight: bold;
+        font-size : 18px;
+      }
+
+      nav li a {
+        color: black;
+        text-decoration: none;
+        font-weight: thin;
+      }
+      
+      nav li a:hover {
+        color: #256BF4 ;
+      }  /* 마우스 올리는*/
+
+
+      
+
+      .right_info {
+            color: rgba(29.000000171363354, 29.000000171363354, 32.00000189244747, 1);
+            position: relative;
+            font-size: 25px;
+            font-weight: 600;
+            margin-top : 30px;
+            margin-bottom: 10px;
+        }
+
+        hr {
+        background:#256BF4;
+        height:3px;
+        border:0;
+        border-radius: 10px 10px 10px 10px;
+    }
+
+      .main {
+        float: left;
+        width: 50%;
+        height: 100vh;
+        padding: 50px;
+        
+      } /* 회원탈퇴 */
+      #board {
+        margin: 20px auto;
+        width: 80%;
+      }
+      .post {
+        border-bottom: 1px solid #ddd;
+        padding: 10px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      
+
+      .post span {
+        margin-right: 10px;
+      }
+      .btn {
+        background-color: #256BF4;
+        color: #fff;
+        border: none;
+        padding: 5px 10px;
+        cursor: pointer;
+        border-top-left-radius: 98px;
+        border-top-right-radius: 98px;
+        border-bottom-left-radius: 98px;
+        border-bottom-right-radius: 98px;
+      }
+      .btn:hover {
+        background-color: #0069d9;
+      }
+
+     
+
+      
+
+    </style>
+
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans KR&display=swap" rel="stylesheet">
+
+  </head>
+  
+  <body>
+    <header>
+      
+    </header>
+    
+    <nav>
+      <ul>
+        
+      <div class=menuPart>
+        <h2>내 정보 보기</h2>
+        <li><a href="#" >내 기본정보</a></li>
+        <li class="active"><a href="#">작성한 구인글</a></li>
+        <li><a href="#">경력 인증 요청 확인</a></li>
+      
+      </div>
+      <li ><a href="#">회원탈퇴 </a></li>
+       </ul>
+    </nav>
+    
+    <div class="main">
+        <h3 class = "right_info">내 구인글 확인</h3>
+    <hr>
+    <div id="board">
+      <div class="post">
+        <span>게시일</span>
+        <span>제목</span>
+        <span>마감일</span>
+        
+      </div>
+
+      <div >
+        <button class="btn">지원자확인</button>
+        <button class="btn">결과확인</button>
+      </div>
+      <!-- 게시물 추가 -->
+    </div>
+
+        
+           
+
+
+  </div>
+</body>
+</html>
