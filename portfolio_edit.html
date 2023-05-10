@@ -53,47 +53,60 @@
             이미지 넣고 삭제할 공간
           </div>
 
-          이름 : <input type="text" id="name" placeholder="이름을 입력하세요"><br>
-          아이디 : <input type="text" id="email" placeholder="아이디를 입력하세요(이메일형식)"><br>
-          <span class="titleText">성별 : </span>
+          이름 <input type="text" id="name"><br>
+          아이디 <input type="text" id="email"><br>
+          <span class="titleText">성별 </span>
           <span class="inputBox">
             <label><input type="radio" name="gender" value="남"> 남성</label>&nbsp;&nbsp;&nbsp;
             <label><input type="radio" name="gender" value="여"> 여성</label>
           </span><br>
-          근무 가능 지역 : <input type="text" id="area" placeholder="근무 가능 지역을 입력하세요"><br>
-          편집 총 시간 : <input type="number" id="text" placeholder="편집 총 시간을 입력하세요"><br>
-          <span class="titleText">편집 툴 : </span>
+          근무 가능 지역 <input type="text" id="location" placeholder="서울"><br>
+          <span class="titleText">편집 툴  </span><br>
           <span class="inputBox">
-            <label><input type="radio" name="editor"> 프리미어 프로</label>
-            <label><input type="radio" name="editor"> 애프터 이펙트</label>
+            <label><input type="radio" name="editor" value="프리미어프로"> 프리미어 프로</label>
+            <label><input type="radio" name="editor" id="aftereffect"> 애프터 이펙트</label>
             <label><input type="radio" name="editor"> 베가스</label>
             <label><input type="radio" name="editor"> 파이널 컷</label>
             <label><input type="radio" name="editor"> 파워 디렉터</label>
             <label><input type="radio" name="editor"> 포토샵</label>
             <label><input type="radio" name="editor"> 일러스트레이터</label>
             <label><input type="radio" name="editor"> MaYa</label>
-            <label><input type="radio" name="editor"> Blender</label>
+            <label><input type="radio" name="editor"> Blender</label><br>
           </span><br>
-          하고 싶은 말 : <input type="text" id="memo" placeholder="하고 싶은 말을 적으세요">
-        </div>
 
-        <hr>
+        </div>
 
         <div id="image_bottom">
 
-          <div>
-            <h5>유튜버 편집 경력</h5>
-            유튜버 리스트를 받나? 아니면 직접 작성 하나? : <input type="date" name="Deadline"><br>
+        <br> <div>
+            유튜버 편집 경력
+            <input type="date" name="startdate" id="startdate"> - <input type="date" name="enddate" id="enddate"><br>
           </div>
           <div>
-            <h5>다른 기업 경력</h5>
+            다른 기업 경력
             <input type="text" id="career" placeholder="경력을 적으세요">
+
           </div>
           <div>
-            <h5>편집 영상은 순서대로 위에서부터 표출 됩니다</h5>
-            대표 영상 링크 : <input type="text" id="main_link" placeholder="링크를 입력하세요"><br>
-            편집 영상 링크 :<br>
+            하고 싶은 말 <input type="text" id="message" placeholder="하고 싶은 말을 적으세요">
+          </div><br>
+
+          <div>
+            대표 영상 링크 <input type="text" id="main_link" placeholder="링크를 입력하세요"><br>
+            편집 영상 링크 <br>
             <input type="text" id="edit_link" placeholder="링크를 입력하세요"><br>
+
+          </div>
+
+          <br><hr><br>
+
+          <div>
+            공개여부
+            공개포트폴리오 제목 <input type="text" id="title" placeholder="제일 멋진 편집자입니다."><br>
+            희망급여 <input type="text" id="salary" placeholder="영상길이 0분당 0원"><br>
+            근무형태 <input type="text" id="worktype" placeholder="재택"><br>
+            구인자에게 한마디 <input type="text" id="toyoutuber" placeholder="욕설은 금지"><br>
+            공개여부
 
           </div>
 
