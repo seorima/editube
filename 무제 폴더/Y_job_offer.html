@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>내 정보 보기</title>
+    <style>
+        * {
+            font-family: Noto Sans KR;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            width: 1100px;
+            margin: 0 auto;
+         }
+      
+      header {
+        color: black;
+        padding: 20px;
+        text-align: center;
+      }
+      
+
+
+      
+      
+
+      .title {
+            color: rgba(29.000000171363354, 29.000000171363354, 32.00000189244747, 1);
+            position: relative;
+            font-size: 25px;
+            font-weight: 600;
+            margin-top : 30px;
+            margin-bottom: 10px;
+        }
+
+      
+      hr {
+        background:#256BF4;
+        height:3px;
+        border:0;
+        border-radius: 10px 10px 10px 10px;
+    }
+      
+    .job{
+      width: 60%;
+      margin: 40px auto;
+    }
+    .btn {
+        background-color: #256BF4;
+        color: #fff;
+        border: none;
+        padding: 5px 10px;
+        cursor: pointer;
+        border-top-left-radius: 98px;
+        border-top-right-radius: 98px;
+        border-bottom-left-radius: 98px;
+        border-bottom-right-radius: 98px;
+        margin: 5px;
+        float: right;
+        
+      }
+      .btn:hover {
+        background-color: #0069d9;
+      }
+      .input1{
+        width: 650px;
+        height: 100px;
+      }
+      .input2{
+        width: 650px;
+        height: 150px;
+      }
+    </style>
+
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans KR&display=swap" rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mainpage_Portfolio</title>
+</head>
+<body>
+  <div class="job">
+    <form id="signupForm" name="signupForm" method="POST">
+        <div>
+    <h1>제목 : <input type="text" placeholder="제목을 입력하세요" id=""></h1>
+        </div>
+        <hr>
+        <div>
+          유튜버 정보 들어가는 칸 (이미지/채널명/인증마크)
+        </div>
+        <div>
+        마감일 : <input type="date" name="Deadline"><br>
+        직무 : <input type="text" placeholder="직무를 입력 하세요" ><br>
+        급여 상세 : <input type="number" placeholder="급여 상세를 입력 하세요" ><br>
+        우대 사항 : <input type="text" placeholder="우대 사항을 입력 하세요" ><br>
+        <span class="titleText">편집 툴 : </span>
+        <span class="inputBox">
+          <label><input type="radio" name="editor"> 프리미어 프로</label>
+          <label><input type="radio" name="editor"> 애프터 이펙트</label>
+          <label><input type="radio" name="editor"> 베가스</label>
+          <label><input type="radio" name="editor"> 파이널 컷</label>
+          <label><input type="radio" name="editor"> 파워 디렉터</label>
+          <label><input type="radio" name="editor"> 포토샵</label><br>
+          <label><input type="radio" name="editor"> 일러스트레이터</label>
+          <label><input type="radio" name="editor"> MaYa</label>
+          <label><input type="radio" name="editor"> Blender</label>
+        </span><br>
+        근무 환경 : <input type="text" placeholder="근무 환경을 입력 하세요" ><br>
+        복리 후생 : <input class="input1" type="text" placeholder="복리 후생을 입력 하세요" ><br>
+        상세 모집 내용 : <input  class="input2" type="text" placeholder="상세 모집 내용을 입력 하세요" ><br>
+      </div>
+      <br>
+        <div>
+            Orginal Video link or Channel link <br>
+             <input type="text" placeholder="링크를 입력하세요" >
+        </div>
+
+        <button class="btn">수정완료</button>
+    
+    </form>
+  </div>
+</body>
+
+</html>

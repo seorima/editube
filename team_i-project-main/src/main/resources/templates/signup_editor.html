@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="layout">
+
+
+<head>
+  <meta charset="UTF-8">
+  <title>회원가입: 편집자</title>
+  <link rel="stylesheet" href="/style/signup_editor.css">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans KR&display=swap" rel="stylesheet">
+  <script type="text/javascript" src="/script/signup.js"></script>
+  <script th:inline="javascript">
+    var Msg = [[${msg}]];
+    if (Msg != null){
+      alert(Msg);
+    }
+  </script>
+  <script>
+
+        function save(){
+            const useremail = document.getElementById("email").value;
+            const password1 = document.getElementById("password").value;
+            const password2 = document.getElementById("confirmPassword").value;
+            const username = document.getElementById("name").value;
+            const usernickname = document.getElementById("nickname").value;
+            const userphone = document.getElementById("phone_number").value;
+            const address1 = document.getElementById("input-address").value;
+            const address2 = document.getElementById("input-detail-address").value;
+            const gender = document.getElementById("gender").value;
+            const userbirth = document.getElementById("birth_date").value;
+
+            const userdata = {
+                email : useremail,
+                password : password1,
+                confirmPssword : password2,
+                name : username,
+                nickname : usernickname,
+                phone_number : userphone,
+                address : address1,
+                detail_addr : address2,
+                gender : gender,
+                birth_date : userbirth,
+            }
+
+            $.ajax({
+                url :"/try-join",
+                type:"post",
+                dataType : "json", // ajax가 받을때 자료형
+                contentType:"application/json", // 보낼때 자료형
+                data: JSON.stringify(userdata),
+                success:function(data){
+                    console.log(data)
+
+                    if(data.result == "성공!"){
+                        alert("회원가입 성공")
+                        location.href = "/";
+                    }else{
+                        alert("가입 실패 ㅠㅠ")
+                    }
+
+                    //console.log(result);
+                },
+                error: function (request, status, error){
+                    console.log(error)
+                    console.log(status)
+                    console.log(request)
+                    //실패햇을때 성공 로직.
+                    alert("가입 실패");
+                }
+            })
+        }
+
+        function road() {
+             const popup = window.open("/address-search","Popup", "width=800, height=700");
+
+             popup.onbeforeunload=(data)=>{
+                 console.log(data)
+                 console.log("데이터 체크")
+            }
+             // 팝업창에 데이터 쓰기
+             popup.document.write(data);
+        }
+
+        function test(){
+            $.ajax({
+                url: "https://business.juso.go.kr/addrlink/addrLinkUrl.do?confmKey=U01TX0FVVEgyMDIzMDUwMjE0MTI1MDExMzczNzM=&returnUrl=http://localhost:3030/road-return&resultType=4",
+                type: "GET",
+            })
+        }
+    </script>
+
+
+</head>
+
+<th:block layout:fragment="content">
+<body>
+
+  <main>
+    <form id="signupForm" name="signupForm" method="POST" action = "/signup_editor">
+      <h1 class="signup-title">편집자 회원가입</h1>
+      <div class="signup-part">
+        <div class=box>
+          <div class=totalBox>
+            <span class="titleText">아이디</span>
+            <span class=inputBox>
+              <input type="email" placeholder="email@editube.com" id="email" name = "email" class="inputValue" required>
+            </span>
+          </div>
+        </div>
+        <div class=box>
+          <div class=totalBox>
+            <span class="titleText">비밀번호</span>
+            <span class="inputBox"><input type="password" name = "password" placeholder="••••••••" id="password" class="inputValue" required>
+            </span>
+          </div>
+        </div>
+        <div class=box>
+          <div class=totalBox>
+            <span class="titleText">비밀번호 확인</span>
+            <span class="inputBox"><input type="password" name = "confirmPassword" placeholder="••••••••" id="confirmPassword" class="inputValue">
+            </span>
+          </div>
+        </div>
+        <div class=box>
+          <div class=totalBox>
+            <span class="titleText">이름</span>
+            <span class="inputBox"><input type="text" name = "name" placeholder="이름을 입력하세요" id="name" class="inputValue" >
+            </span>
+          </div>
+        </div>
+        <div class=box>
+          <div class=totalBox>
+            <span class="titleText">닉네임</span>
+            <span class="inputBox"><input type="text" name = "nickname" placeholder="닉네임을 입력하세요" id="nickname" class="inputValue">
+            </span>
+          </div>
+        </div>
+        <div class=box>
+          <div class=totalBox>
+            <span class="titleText">성별</span>
+            <span class="inputBox">
+              <label><input type="radio" name="gender" value="남"> 남성</label>&nbsp;&nbsp;&nbsp;
+              <label><input type="radio" name="gender" value="여"> 여성</label>
+            </span>
+          </div>
+        </div>
+        <div class=box>
+          <div class=totalBox>
+            <span class="titleText">핸드폰 번호</span>
+            <span class="inputBox"><input type="text" name="phone_number" placeholder="010-0000-0000" id="phone_number" class="inputValue" >
+            </span>
+          </div>
+        </div>
+        <div class="box address">
+          <div class=totalBox>
+            <span class="titleText">도로명 주소</span>
+            <span class="inputBox"><input type="text" name="address" placeholder="도로명 주소를 입력하세요" id="address" class="inputValue" readonly>
+            </span>
+          </div>
+          <button type="button" onclick="road()" class=searchAddrButton>주소찾기</button>
+        </div>
+
+        <div class=box>
+          <div class=totalBox>
+            <span class="titleText">상세 주소</span>
+            <span class="inputBox"><input type="text" placeholder="상세 주소를 입력하세요" id="detail_addr" class="inputValue" name = "detail_addr">
+            </span>
+          </div>
+        </div>
+        <div class=box>
+          <div class=totalBox>
+            <span class="titleText">생년월일</span>
+            <span class="inputBox"><input type="date" id="birth_date" name = "birth_date" class="signup-birthdate">
+            </span>
+          </div>
+        </div>
+      </div>
+      <button onclick="save()" class=signUpButton>회원가입</button>
+    </form>
+  </main>
+</body>
+</th:block>
+</html>

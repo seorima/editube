@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorate="layout">
+
+<head>
+	<meta charset="UTF-8">
+	<title>EDITUBE</title>
+	<link rel="stylesheet" href="/style/main.css">
+	<link href="https://fonts.googleapis.com/css?family=Noto+Sans KR&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script th:inline="javascript">
+		var Msg = [[${msg}]];
+		if (Msg != null){
+			alert(Msg);
+		}
+	</script>
+</head>
+
+<th:block layout:fragment="content">
+	<body>
+	<div class="search-container">
+		<input type="text" class="search-input" placeholder="구인글 검색">
+		<button class="search-button">검색</button>
+	</div>
+
+
+	<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+		<ol class="carousel-indicators">
+			<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+			<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+			<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+		</ol>
+		<div class="carousel-inner">
+			<div class="carousel-item active" >
+				<img src="/img/main_banner_1.png" alt="Image 1">
+			</div>
+			<div class="carousel-item">
+				<img src="/img/main_banner_2.png" alt="Image 2">
+			</div>
+			<div class="carousel-item">
+				<img src="/img/main_banner_3.png" alt="Image 3">
+			</div>
+		</div>
+
+		<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			<span class="sr-only">Previous</span>
+		</a>
+
+		<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			<span class="sr-only">Next</span>
+		</a>
+	</div>
+
+
+	<div class="button-container">
+		<a href="#" class="button">
+			<img class="button-icon" src="/img/job-search.png" alt="recruit board">
+			최신 구인글 확인
+		</a>
+		<a href="#" class="button">
+			<img class="button-icon" src="/img/recruitment.png" alt="open portfolio">
+			공개 포트폴리오 확인
+		</a>
+		<a href="#" class="button">
+			<img class="button-icon" src="/img/resume.png" alt="write portfolio">
+			내 포트폴리오 작성
+		</a>
+		<a href="#" class="button">
+			<img class="button-icon" src="/img/information.png" alt="how to use">
+			이용 안내
+		</a>
+	</div>
+	</body>
+</th:block>
+</html>

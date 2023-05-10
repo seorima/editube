@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Noto+Sans KR&display=swap" rel="stylesheet">
+        <title>게시판 목록</title>
+        <style>
+            * {
+    margin: 0;
+    padding: 0;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+caption {
+    display: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.board_list_wrap {
+    padding: 50px;
+}
+
+.board_list {
+    width: 100%;
+    border-top: 2px solid #fefefe;
+}
+
+.board_list tr {
+    border-bottom: 1px solid #ccc;
+}
+
+.board_list th,
+.board_list td {
+    padding: 10px;
+    font-size: 14px;
+}
+
+.board_list td {
+    text-align: center;
+}
+
+.board_list .tit {
+    text-align: center;
+}
+
+.board_list .tit:hover {
+    text-decoration: underline;
+}
+
+.board_list_wrap .paging {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 0;
+}
+.board_list_wrap .paging a {
+    display: inline-block;
+    margin-left: 10px;
+    padding: 5px 10px;
+    border-radius: 100px;
+    font-size: 12px;
+}
+.board_list_wrap .paging a:first-child {
+    margin-left: 0;
+}
+
+.board_list_wrap .paging a.bt {
+    border: 1px solid #ffffff;
+    background: #256BF4;
+    color: #fff;
+}
+
+.board_list_wrap .paging a.num {
+    border: 1px solid #256BF4;
+    font-weight: 600;
+    color: #08090a;
+}
+
+.board_list_wrap .paging a.num.on {
+    background: #256BF4;
+    color: #fff;
+}
+
+
+.board_list_wrap .paging1 {
+    margin-top: 20px;
+    text-align: right;
+    font-size: 0;
+}
+.board_list_wrap .paging1 a {
+    display: inline-block;
+    margin-left: 10px;
+    padding: 5px 10px;
+    border-radius: 100px;
+    font-size: 12px;
+}
+.board_list_wrap .paging1 a:first-child {
+    margin-left: -800px;
+}
+
+.board_list_wrap .paging1 a.bt {
+    border: 1px solid #256BF4;
+    background: #256BF4;
+    color: #fff;
+}
+
+.board_list_wrap .paging1 a.num {
+    border: 1px solid #256BF4;
+    font-weight: 600;
+    color: #256BF4;
+}
+.search{
+    width: 800px;
+}
+.search1{
+    width: 200px;
+}
+.search2{
+    width: 200px;
+}
+
+        </style>
+    </head>
+    <body>
+        <div class="board_list_wrap">
+            <h1><input class="search" placeholder="검색하세요"></h1>
+            <div>총 영상물 시간 : <input type="number" class="search1" placeholder="검색하세요"></div>
+            <div>근무 가능 지역 : <input class="search2" placeholder="검색하세요"> 
+                <label for="maya">재택 근무</label>
+                <input type="checkbox" name="editing-tools" id="maya"></div>
+            <div class="filters">
+                <b>편집 툴 : </b> 
+                <label for="premier-pro">프리미어 프로</label>
+                <input type="checkbox" name="editing-tools" id="premier-pro">
+                <label for="after-effects">애프터 이펙트</label>
+                <input type="checkbox" name="editing-tools" id="after-effects">
+                <label for="vegas">베가스</label>
+                <input type="checkbox" name="editing-tools" id="vegas">
+                <label for="final-cut">파이널 컷</label>
+                <input type="checkbox" name="editing-tools" id="final-cut">
+                <label for="power-director">파워디렉터</label>
+                <input type="checkbox" name="editing-tools" id="power-director">
+                <label for="photoshop">포토샵</label>
+                <input type="checkbox" name="editing-tools" id="photoshop">
+                <label for="illustrator">일러스트</label>
+                <input type="checkbox" name="editing-tools" id="illustrator">
+                <label for="maya">MaYa</label>
+                <input type="checkbox" name="editing-tools" id="maya">
+                <label for="blender">Blender</label>
+                <input type="checkbox" name="editing-tools" id="blender">
+          </div>
+            <table class="board_list">
+                   
+                </div>
+                <caption>게시판 목록</caption>
+                <thead>
+                    <tr>
+                        <th>제목</th>
+                        <th>닉네임</th>
+                        <th>총 영상물 시간</th>
+                        <th>편집툴</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="tit">꾸준함으로 보답하겠습니다</td>
+                        <td >김겸손</td>
+                        <td>9시간30분</td>
+                        <td>프리미어 프로</td>
+                    </tr>
+                    <tr>
+                        <td class="tit">하루 24시간을 3분할로 쪼게서 하겠습니다</td>
+                        <td >김겸손</td>
+                        <td>9시간30분</td>
+                        <td>프리미어 프로</td>
+                    </tr>
+                    <tr>
+                        <td class="tit">제발 제발 제발 일만 시켜주세요</td>
+                        <td >김겸손</td>
+                        <td>9시간30분</td>
+                        <td>프리미어 프로</td>
+                    </tr>
+                    <tr>
+                        <td class="tit">시켜만 주신다면 열심히 하겠습니다</td>
+                        <td >김겸손</td>
+                        <td>9시간30분</td>
+                        <td>프리미어 프로</td>
+                    </tr>
+                    <tr>
+                        <td class="tit">신의 깃든 편집 편집몬스터입니다</td>
+                        <td >김겸손</td>
+                        <td>9시간30분</td>
+                        <td>프리미어 프로</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="paging">
+                <a href="#" class="bt"><</a>
+                <a href="#" class="num on">1</a>
+                <a href="#" class="num">2</a>
+                <a href="#" class="num">3</a>
+                <a href="#" class="bt">></a>
+            </div>
+                <div class="paging1">
+                <a href="#" class="bt">내 포트폴리오 공개</a>
+                </div>
+        </div>
+    </body>
+</html>

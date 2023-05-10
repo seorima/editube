@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Noto+Sans KR&display=swap" rel="stylesheet">
+        <title>게시판 목록</title>
+        <style>
+            * {
+    margin: 0;
+    padding: 0;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+caption {
+    display: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.board_list_wrap {
+    padding: 50px;
+}
+
+.board_list {
+    width: 100%;
+    border-top: 2px solid #fefefe;
+}
+
+.board_list tr {
+    border-bottom: 1px solid #ccc;
+}
+
+.board_list th,
+.board_list td {
+    padding: 10px;
+    font-size: 14px;
+}
+
+.board_list td {
+    text-align: center;
+}
+
+.board_list .tit {
+    text-align: left;
+}
+
+.board_list .tit:hover {
+    text-decoration: underline;
+}
+
+.board_list_wrap .paging {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 0;
+}
+.board_list_wrap .paging a {
+    display: inline-block;
+    margin-left: 10px;
+    padding: 5px 10px;
+    border-radius: 100px;
+    font-size: 12px;
+}
+.board_list_wrap .paging a:first-child {
+    margin-left: 0;
+}
+
+.board_list_wrap .paging a.bt {
+    border: 1px solid #ffffff;
+    background: #256BF4;
+    color: #fff;
+}
+
+.board_list_wrap .paging a.num {
+    border: 1px solid #256BF4;
+    font-weight: 600;
+    color: #08090a;
+}
+
+.board_list_wrap .paging a.num.on {
+    background: #256BF4;
+    color: #fff;
+}
+
+
+.board_list_wrap .paging1 {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 0;
+}
+.board_list_wrap .paging1 a {
+    display: inline-block;
+    margin-left: 10px;
+    padding: 5px 10px;
+    border-radius: 100px;
+    font-size: 12px;
+}
+.board_list_wrap .paging1 a:first-child {
+    margin-left: -800px;
+}
+
+.board_list_wrap .paging1 a.bt {
+    border: 1px solid #256BF4;
+    background: #256BF4;
+    color: #fff;
+}
+
+.board_list_wrap .paging1 a.num {
+    border: 1px solid #256BF4;
+    font-weight: 600;
+    color: #256BF4;
+}
+.input1{
+    width: 500px;
+    height: 80px;
+    float: left;
+}
+.root{
+    display: flex;
+}
+.root a{
+    height: 20px;
+    width: 30px;
+}
+        </style>
+    </head>
+    <body>
+        <div class="board_list_wrap">
+            <h1>Q&A</h1>
+            <table class="board_list">
+                <div class="paging1">
+                <a href="#" class="bt">전체 보기</a> 
+                <a href="#" class="bt">내 문의 확인</a>
+                    <div class="root">
+                        <input class="input1" type="text" placeholder="문의 내용을 적어주세요(500자 이내)"> 
+                        <a href="#" class="bt">작성 </a> 
+                    </div>
+                </div>
+                <caption>게시판 목록</caption>
+                <thead>
+                    <tr>
+                        <th>번호</th>
+                        <th>문의내용</th>
+                        <th>글쓴이</th>
+                        <th>작성일</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>5</td>
+                        <td class="tit">
+                            <a href="#">일딴 html만 가는 것이야</a>
+                            <!-- 문의 내용   -->
+                        </td>
+                        <td>고객 이름</td> 
+                        <!-- 고객 이름이 들어와야 합니다 -->
+                        <td>작성-날-짜</td>
+                        <!-- 작성 기준 시점 년도/월/일?  -->
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td class="tit">
+                            <a href="#">음 .. 이걸 진짜 어떻게 활용을 하지 .</a>
+                        </td>
+                        <td>고객 이름</td>
+                        <td>작성-날-짜</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td class="tit">
+                            <a href="#">이걸 어떻게 활용을 해야 할까요?</a>
+                        </td>
+                        <td>고객 이름</td>
+                        <td>작성-날-짜</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td class="tit">
+                            <a href="#">도용이 아닌데 자꾸 도용이래요</a>
+                        </td>
+                        <td>고객 이름</td>
+                        <td>작성-날-짜</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td class="tit">
+                            <a href="#">유튜버가 인증을 안해줘요 </a>
+                        </td>
+                        <td>고객 이름</td>
+                        <td>작성-날-짜</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="paging">
+                <a href="#" class="bt">첫 페이지</a>
+                <a href="#" class="bt">이전 페이지</a>
+                <a href="#" class="num on">1</a>
+                <a href="#" class="num">2</a>
+                <a href="#" class="num">3</a>
+                <a href="#" class="bt">다음 페이지</a>
+                <a href="#" class="bt">마지막 페이지</a>
+            </div>
+        </div>
+    </body>
+</html>
