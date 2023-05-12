@@ -57,26 +57,20 @@ header {
     line-height: 2;
 }
 
-
-
 .accountlogin {
     display: flex;
-    width: 350px;
+    width: 310px;
     justify-content: flex-end;
 }
 
 .accountlogin a {
-    margin-left: 20px;
+    margin-left: 10px;
     text-decoration: none;
     color: #1D1D20;
     font-size: 14px;
     font-weight: normal;
     line-height: 2;
 }
-
-
-
-
 
 
 

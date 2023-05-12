@@ -41,3 +41,7 @@ dependencies {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
+bootWar{
+	archiveName("EDITUBE.war")
+}

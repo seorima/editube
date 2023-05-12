@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="layout">
+
+<head>
+  <meta charset="UTF-8">
+  <title>마이페이지: 지원현황 확인</title>
+  <link rel="stylesheet" th:href="@{/style/applynow.css}">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans KR&display=swap" rel="stylesheet">
+  <script th:inline="javascript">
+    var Msg = [[${param.msg}]];
+    if (Msg != null){
+      alert(Msg);
+    }
+  </script>
+</head>
+
+<th:block layout:fragment="content">
+<body>
+
+  <main>
+    <nav class="sideBar">
+      <ul>
+        <div class=menuPart>
+          <h2>마이 페이지</h2>
+          <li><a href="#">내 기본정보</a></li>
+          <li class="active"><a href="#">지원현황 확인</a></li>
+          <li><a href="#">내 포트폴리오 보기</a></li>
+
+        </div>
+        <li><a href="#">회원탈퇴 </a></li>
+      </ul>
+    </nav>
+
+    <div class="main">
+      <h3 class="right_info">지원현황 확인</h3>
+      <hr>
+      <div id="board">
+        <div class="post">
+          <table class="board_list">
+            <thead>
+            <tr>
+              <th>구인글 번호</th>
+              <th>마감일</th>
+              <th>제목</th>
+              <th>영상 제출 버튼</th>
+              <th>지원 취소 버튼</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="recruitDO : ${recruitDO}">
+
+              <td>[[${recruitDO.recruitNo}]]</td>
+              <td>[[${recruitDO.deadline}]]</td>
+              <td ><a th:href="@{/recruit_result(recruitNo= ${recruitDO.recruitNo})}">[[${recruitDO.title}]] </a></td>
+              <td><a th:href="@{/applynow_upload(recruitNo= ${recruitDO.recruitNo})}" class="btn_edit">편집영상제출</a></td>
+              <td><a class="btn_cancel">지원취소</a></td>
+            </tbody>
+          </table>
+        </div>
+
+
+        <!-- 게시물 추가 -->
+      </div>
+    </div>
+  </main>
+
+</body>
+</th:block>
+</html>

@@ -7,6 +7,8 @@ spring:
     username: scott
     password: tiger
     driver-class-name: oracle.jdbc.driver.OracleDriver
+  thymeleaf:
+    cache: false
 
 mygoogle:
   clientid: 571817488080-c2gg7o1udb56itconj83t86bv8nn2sau.apps.googleusercontent.com
@@ -17,3 +19,7 @@ mygoogle:
   scope: profile,email,openid
   clientredirectyoutube: http://localhost:8080/oauth/youtube/redirect
   apiKey: AIzaSyBeXBspKOYvU13kgDawlVsBXNHIAbdxSoE
+
+admin:
+  adminEmail: admin@editube.com
+  adminPassword: longlee6789

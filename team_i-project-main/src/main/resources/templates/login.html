@@ -6,7 +6,7 @@
 <head>
   <meta charset="UTF-8">
   <title>로그인</title>
-  <link rel="stylesheet" href="/style/login.css">
+  <link rel="stylesheet" th:href="@{/style/login.css}">
   <link href="https://fonts.googleapis.com/css?family=Noto+Sans KR&display=swap" rel="stylesheet">
   <script th:inline="javascript">
     var errorMsg = [[${error}]];
@@ -19,7 +19,7 @@
 <th:block layout:fragment="content">
 <body>
   <main>
-    <form method="post" action = "/login" id="loginForm" name="loginForm" >
+    <form method="post" th:action = "@{/login}" id="loginForm" name="loginForm" >
       <h1 class="loginText">로그인</h1>
       <div class=box>
         <div class=totalBox>
@@ -41,9 +41,9 @@
 
       <div class=moveNextPage>
         <ul>
-          <li><a href="/signup_options">회원가입</a></li>
-          <li><a href="/find_id">아이디 찾기</a></li>
-          <li><a href="/find_password">비밀번호 찾기</a></li>
+          <li><a th:href="@{/signup_options}">회원가입</a></li>
+          <li><a th:href="@{/find_id}">아이디 찾기</a></li>
+          <li><a th:href="@{/find_password}">비밀번호 찾기</a></li>
         </ul>
       </div>
     </form>

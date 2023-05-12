@@ -7,9 +7,9 @@
 <head>
   <meta charset="UTF-8">
   <title>회원가입: 편집자</title>
-  <link rel="stylesheet" href="/style/signup_editor.css">
+  <link rel="stylesheet" th:href="@{/style/signup_editor.css}">
   <link href="https://fonts.googleapis.com/css?family=Noto+Sans KR&display=swap" rel="stylesheet">
-  <script type="text/javascript" src="/script/signup.js"></script>
+  <script type="text/javascript" th:src="@{/script/signup.js}"></script>
   <script th:inline="javascript">
     var Msg = [[${msg}]];
     if (Msg != null){
@@ -72,7 +72,7 @@
         }
 
         function road() {
-             const popup = window.open("/address-search","Popup", "width=800, height=700");
+             const popup = window.open("EDITUBE/address-search","Popup", "width=800, height=700");
 
              popup.onbeforeunload=(data)=>{
                  console.log(data)
@@ -97,7 +97,7 @@
 <body>
 
   <main>
-    <form id="signupForm" name="signupForm" method="POST" action = "/signup_editor">
+    <form id="signupForm" name="signupForm" method="POST" th:action = "@{/signup_editor}">
       <h1 class="signup-title">편집자 회원가입</h1>
       <div class="signup-part">
         <div class=box>
