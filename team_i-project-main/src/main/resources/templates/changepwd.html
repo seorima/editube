@@ -9,29 +9,26 @@
   <link rel="stylesheet" th:href="@{/style/changepwd.css}">
   <link href="https://fonts.googleapis.com/css?family=Noto+Sans KR&display=swap" rel="stylesheet">
   <script>
-  function validatePassword() {
+    function validatePassword() {
 
-    var renewpwd = document.getElementById("renewpwd").value;
-    var newpwd = document.getElementById("newpwd").value;
+      var renewpwd = document.getElementById("renewpwd").value;
+      var newpwd = document.getElementById("newpwd").value;
 
-    if(newpwd.length < 4) {
-      alert("비밀번호 4자 이상 입력하세요.")
-      return false;
+      if(newpwd.length < 4) {
+        alert("비밀번호 4자 이상 입력하세요.")
+        return false;
+      }
+      else if (newpwd != renewpwd) {
+        alert("비밀번호가 일치하지 않습니다.");
+        return false;
+      }
+
     }
-    else if (newpwd != renewpwd) {
-      alert("비밀번호가 일치하지 않습니다.");
-      return false;
-    }
-    else {
-      alert("비밀번호가 변경되었습니다.");
-      return true;
-    }
-  }
   </script>
   <script th:inline="javascript">
     var failMsg = [[${failMsg}]];
     if (failMsg != null) {
-     alert(failMsg);
+      alert(failMsg);
     }
   </script>
 </head>

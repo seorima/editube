@@ -33,7 +33,7 @@ hr {
 .main {
     float: left;
     width: 50%;
-    height: 100vh;
+    height: auto;
     padding: 5px;
 
 }
@@ -106,7 +106,9 @@ thead {
 }
 
 .btn:hover {
-    background-color: #0069d9;
+    background-color: #ffffff;
+        color: #256BF4;
+        border: 2px solid #256BF4;
 }
 
 
@@ -131,13 +133,48 @@ thead {
     outline: none;
     /* 포커스 효과 없애기 */
 }
-.pagination {
-			list-style: none;
-			width : 30%;
-			display: inline-block;
-		}
 
-		.page-items {
-			float: left;
-			margin-left : 5px;
-		}
+.paging {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 0;
+}
+
+.paging a {
+    display: inline-block;
+    margin-left: 10px;
+    padding: 5px 10px;
+    border-radius: 100px;
+    font-size: 12px;
+}
+
+.paging a:first-child {
+    margin-left: 0;
+}
+
+.paging a.bt {
+    border: 1px solid #ffffff;
+    background: #256BF4;
+    color: #fff;
+}
+
+.paging a.num {
+    border: 1px solid #256BF4;
+    font-weight: 600;
+    color: #08090a;
+}
+
+.paging a.num.on {
+    background: #256BF4;
+    color: #fff;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.root{
+display: flex;
+justify-content: space-evenly;
+}

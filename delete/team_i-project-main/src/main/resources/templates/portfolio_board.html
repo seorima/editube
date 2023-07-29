@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="layout">
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" th:href="@{/style/portfolio_board.css}">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans KR&display=swap" rel="stylesheet">
+  <title>포트폴리오 게시판</title>
+</head>
+<th:block layout:fragment="content">
+  <body>
+
+  <main>
+    <div class="board_list_wrap">
+      <h1><input class="search" placeholder="검색어를 입력하세요"></h1>
+      <hr />
+      <div>· 총 영상물 시간 : <input type="number" class="search1" placeholder="총 영상물 시간을 입력하세요"></div>
+      <div>· 근무 가능 지역 : <input class="search2" placeholder="근무 가능 지역을 검색하세요"></div>
+      <div class="filters">
+        <b>· 편집 툴 : </b>
+        <label for="premier-pro">프리미어 프로</label>
+        <input type="checkbox" name="editing-tools" id="premier-pro">
+        <label for="after-effects">애프터 이펙트</label>
+        <input type="checkbox" name="editing-tools" id="after-effects">
+        <label for="vegas">베가스</label>
+        <input type="checkbox" name="editing-tools" id="vegas">
+        <label for="final-cut">파이널 컷</label>
+        <input type="checkbox" name="editing-tools" id="final-cut">
+        <label for="power-director">파워디렉터</label>
+        <input type="checkbox" name="editing-tools" id="power-director">
+        <label for="photoshop">포토샵</label>
+        <input type="checkbox" name="editing-tools" id="photoshop">
+        <label for="illustrator">일러스트</label>
+        <input type="checkbox" name="editing-tools" id="illustrator">
+        <label for="maya">MaYa</label>
+        <input type="checkbox" name="editing-tools" id="maya">
+        <label for="blender">Blender</label>
+        <input type="checkbox" name="editing-tools" id="blender">
+      </div>
+      <hr />
+      <table class="board_list">
+
+        <caption>게시판 목록</caption>
+        <thead>
+        <tr>
+          <th>제목</th>
+          <th>닉네임</th>
+          <th>총 영상물 시간</th>
+          <th>편집툴</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="portfolioDO : ${portfolioDO}">
+
+          <td><a th:href="@{/portfolio_result(email= ${portfolioDO.email})}">[[${portfolioDO.title}]]</a></td>
+          <td>[[${portfolioDO.email}]]</td>
+          <td>[[${portfolioDO.postdate}]]</td>
+        </tbody>
+      </table>
+      <div class="paging">
+        <a href="#" class="bt"><</a>
+        <a href="#" class="num on">1</a>
+        <a href="#" class="num">2</a>
+        <a href="#" class="num">3</a>
+        <a href="#" class="bt">></a>
+      </div>
+      <div class="paging1">
+        <a href="#" class="bt">내 포트폴리오 공개</a>
+      </div>
+    </div>
+  </main>
+  </body>
+</th:block>
+</html>

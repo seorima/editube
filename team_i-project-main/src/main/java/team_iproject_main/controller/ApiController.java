@@ -56,7 +56,7 @@ public class ApiController {
         return "addresspop";
     }
 
-    @GetMapping("EDITUBE/address-search")
+    @GetMapping("/address-search")
     public String addressSearch(){
         return "addressSearch";
     }
@@ -233,6 +233,7 @@ public class ApiController {
             System.out.println(channelList);
             System.out.println(channelList.toString());
 
+
             if(channelList.getItems().equals("")) {
                 return "signup_youtuber";
             }
@@ -250,9 +251,22 @@ public class ApiController {
             if(resultJson != null) {
                 RequestId requestId = new RequestId();
                 requestId.setChannel_id(channelList.getItems().get(0).getId());
+                requestId.setSubscribe((long) channelList.getItems().get(0).getStatistics().getSubscriberCount());
+                requestId.setVideo_count((long) channelList.getItems().get(0).getStatistics().getVideoCount());
+                requestId.setView_count((long) channelList.getItems().get(0).getStatistics().getViewCount());
+                requestId.setChannel_name(channelList.getItems().get(0).getSnippet().getTitle());
+                requestId.setChannel_photo(channelList.getItems().get(0).getSnippet().getThumbnails().getMedium().getUrl());
+
+
                 model.addAttribute("channel_id",requestId.getChannel_id());
-                model.addAttribute("resultMsg", "채널인증완료");
-                model.addAttribute("gyeomson", true);
+                model.addAttribute("subscribe",requestId.getSubscribe());
+                model.addAttribute("video_count",requestId.getVideo_count());
+                model.addAttribute("view_count",requestId.getView_count());
+                model.addAttribute("channel_name",requestId.getChannel_name());
+                model.addAttribute("channel_photo", requestId.getChannel_photo());
+                model.addAttribute("channel_certificate_button",true);
+                model.addAttribute("channel_photo_subscribe",false);
+                model.addAttribute("channel_errorMsg_hidden", true);
                 return "signup_youtuber";
             }
             else {
@@ -263,8 +277,10 @@ public class ApiController {
         catch (Exception e) {
             e.printStackTrace();
         }
-
-        model.addAttribute("resultMsg", "채널인증미완료");
+        model.addAttribute("channel_certificate_button",false);
+        model.addAttribute("channel_photo_subscribe", true);
+        model.addAttribute("channel_errorMsg", "채널 인증이 되지 않았습니다.");
+        model.addAttribute("channel_errorMsg_hidden", false);
         HttpHeaders httpHeaders = new HttpHeaders();
         return "signup_youtuber";
     }

@@ -136,9 +136,15 @@ thead {
 }
 
 .search {
-    width: 830px;
+    width: 770px;
     height: 30px;
     font-size: 20px;
+    border: 2px solid #256BF4;
+    /* 테두리 스타일링 */
+    margin-left: 10px;
+    border-radius: 5px;
+    /* 테두리 둥글게 만들기 */
+    display: inline-block;
 }
 
 .search1 {
@@ -147,4 +153,22 @@ thead {
 
 .search2 {
     width: 200px;
+}
+
+.btn {
+    background-color: #256BF4;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    height: 30px;
+    width: 60px;
+    margin-left: 15px;
+    margin-top: -30px;
+    float: right;
+    border-top-left-radius: 98px;
+    border-top-right-radius: 98px;
+    border-bottom-left-radius: 98px;
+    border-bottom-right-radius: 98px;
+    float: right;
 }

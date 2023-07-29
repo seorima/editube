@@ -35,32 +35,31 @@
 
 <main>
     <div class="board_list_wrap">
-        <h1><input class="search" placeholder="검색어를 입력하세요"></h1>
-        <hr />
-        <div>· 구독자 수 : <input type="number" class="search1" placeholder="구독자수를 입력하세요"></div>
-        <div>· 급여 : <input type="number" class="search1" placeholder="금액을 입력하세요"></div>
-        <div>· 근무 지역 : <input class="search2" placeholder="지역을 입력하세요"></div>
-        <div class="filters">
-            <b>· 편집 툴 : </b>
-            <label for="premier-pro">프리미어 프로</label>
-            <input type="checkbox" name="editing-tools" id="premier-pro">
-            <label for="after-effects">애프터 이펙트</label>
-            <input type="checkbox" name="editing-tools" id="after-effects">
-            <label for="vegas">베가스</label>
-            <input type="checkbox" name="editing-tools" id="vegas">
-            <label for="final-cut">파이널 컷</label>
-            <input type="checkbox" name="editing-tools" id="final-cut">
-            <label for="power-director">파워디렉터</label>
-            <input type="checkbox" name="editing-tools" id="power-director">
-            <label for="photoshop">포토샵</label>
-            <input type="checkbox" name="editing-tools" id="photoshop">
-            <label for="illustrator">일러스트</label>
-            <input type="checkbox" name="editing-tools" id="illustrator">
-            <label for="maya">MaYa</label>
-            <input type="checkbox" name="editing-tools" id="maya">
-            <label for="blender">Blender</label>
-            <input type="checkbox" name="editing-tools" id="blender">
-        </div>
+        <form th:action="@{/recruit_board/search}" method="POST" modelAttribute="searchForm">
+            <h1><input class="search" id="search_text" name="search_text" placeholder="검색어를 입력하세요"></h1>
+            <button class="btn" type="submit">검색</button>
+            <hr />
+            <table>
+            <tr><td>· 구독자 수</td><td>&nbsp;&nbsp;:&nbsp;&nbsp;</td><td><input type="number" class="search1" id="subscribe_no" name="subscribe_no" placeholder="구독자수를 입력하세요"></td> <td>&nbsp;이상</td></tr>
+            <tr><td>· 급여 </td><td>&nbsp;&nbsp;:&nbsp;&nbsp;</td><td><input type="number" class="search1" id="salary_no" name="salary_no" placeholder="금액을 입력하세요"></td> <td>&nbsp;이상</td></tr>
+            <tr><td>· 근무 지역 </td><td>&nbsp;&nbsp;:&nbsp;&nbsp;</td><td><input class="search2" id="environment_no" name="environment_no" placeholder="지역을 입력하세요"></td><td></td></tr>
+            </table>
+            <div class="filters">
+                <span class="titleText">· 편집 툴 &nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;</span><br />
+                <span class="inputBox" name = "edits">
+            <label><input type="checkbox" name="edit_tools_no" value = "프리미어프로"> 프리미어 프로</label>
+            <label><input type="checkbox" name="edit_tools_no" value = "애프터이펙트"> 애프터 이펙트</label>
+            <label><input type="checkbox" name="edit_tools_no" value = "베가스"> 베가스</label>
+            <label><input type="checkbox" name="edit_tools_no" value = "파이널컷"> 파이널 컷</label>
+            <label><input type="checkbox" name="edit_tools_no" value = "파워디렉터"> 파워 디렉터</label>
+            <label><input type="checkbox" name="edit_tools_no" value = "포토샵"> 포토샵</label>
+            <label><input type="checkbox" name="edit_tools_no" value = "일러스트레이터"> 일러스트레이터</label>
+            <label><input type="checkbox" name="edit_tools_no" value = "마야"> MaYa</label>
+            <label><input type="checkbox" name="edit_tools_no" value = "블렌더"> Blender</label>
+            <label><input type="checkbox" name="edit_tools_no" value = "기타"> 기타</label>
+          </span><br>
+            </div>
+        </form>
         <hr />
         <table class="board_list">
 
@@ -76,27 +75,33 @@
             </thead>
             <tbody>
             <tr th:each="recruitDO : ${recruitDO}">
-
-                <td>[[${recruitDO.recruitNo}]]</td>
-                <td ><a th:href="@{/recruit_result(recruitNo= ${recruitDO.recruitNo})}">[[${recruitDO.title}]] </a></td>
-                <td>[[${recruitDO.deadline}]]</td>
-                <td>[[${recruitDO.email}]]</td>
+                <td style="height: 30px; width : 125px; table-layout:fixed;">[[${recruitDO.recruitNo}]]</td>
+                <td style="height: 30px; width : 320px; table-layout:fixed;  word-break:break-all"><a th:href="@{/recruit_result(recruitNo= ${recruitDO.recruitNo})}">[[${recruitDO.title}]] </a></td>
+                <td style="height: 30px; width : 125px; table-layout:fixed;">[[${recruitDO.deadline}]]</td>
+                <td style="height: 30px; width : 200px; table-layout:fixed; word-break:break-all"><img th:src="${recruitDO.channel_photo}" alt="Image" style="border-radius: 100%;
+                            width: 30px;
+                            height: 30px;
+                            vertical-align: middle;
+                            "> <p style="vertical-align: middle; display: inline-block;"> [[${recruitDO.channel_name}]]</p></td>
             </tbody>
         </table>
 
         <div class="paging">
-            <a th:href="@{/recruit_board(page=1)}" th:class="${currentPage == 1} ? 'bt disabled' : 'bt'"><<</a>
-            <a th:href="@{/recruit_board(page=${currentPage != 1 ? currentPage - 1 : currentPage})}" th:class="${currentPage == 1} ? 'bt disabled' : 'bt'"><</a>
+            <th:block th:if="${totalPages > 0}">
+                <a th:href="@{/recruit_board(page=1)}" th:class="${currentPage == 1} ? 'bt disabled' : 'bt'"><<</a>
+                <a th:href="@{/recruit_board(page=${currentPage != 1 ? currentPage - 1 : currentPage})}" th:class="${currentPage == 1} ? 'bt disabled' : 'bt'"><</a>
 
-            <th:block th:each="pageNumber : ${#numbers.sequence(startPage, endPage)}">
-                <a th:href="@{/recruit_board(page=${pageNumber})}" th:class="${pageNumber == currentPage} ? 'num on' : 'num'">
-                    [[${pageNumber}]]
-                </a>
+                <th:block th:each="pageNumber : ${#numbers.sequence(startPage, endPage)}">
+                    <a th:href="@{/recruit_board(page=${pageNumber})}" th:class="${pageNumber==currentPage}?'num on':'num'">
+                        [[${pageNumber}]]
+                    </a>
+                </th:block>
+
+                <a th:href="@{/recruit_board(page=${currentPage != totalPages ? currentPage + 1 : currentPage})}" th:class="${currentPage == totalPages} ? 'bt disabled' : 'bt'">></a>
+                <a th:href="@{/recruit_board(page=${totalPages})}" th:class="${currentPage == totalPages} ? 'bt disabled' : 'bt'">>></a>
             </th:block>
-
-            <a th:href="@{/recruit_board(page=${currentPage != totalPages ? currentPage + 1 : currentPage})}" th:class="${currentPage == totalPages} ? 'bt disabled' : 'bt'">></a>
-            <a th:href="@{/recruit_board(page=${totalPages})}" th:class="${currentPage == totalPages} ? 'bt disabled' : 'bt'">>></a>
         </div>
+
         <div class="paging1">
             <a th:href="@{/recruit_board_edit}" class="bt" th:text="|구인글 작성|" th:onclick="check(event)"></a>
         </div>

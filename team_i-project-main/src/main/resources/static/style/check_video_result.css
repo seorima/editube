@@ -5,19 +5,17 @@
 }
 
 main {
-    width: 1100px;
+    width: 1300px;
     display: flex;
     margin: 0 auto;
     margin-top: 5%;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .sideBar {
     float: left;
-    width: 33.33%;
-    border-right: 1px solid #333;
-    /*구분선*/
-    height: 100vh;
+    width: 26.33%;
+    height: auto;
 }
 
 .sideBar ul {
@@ -34,9 +32,8 @@ main {
     margin-right: 20px;
 }
 
-
 .sideBar li.active a {
-    color: black;
+    color: #256BF4;
     text-decoration: none;
     font-weight: bold;
     font-size: 18px;
@@ -66,26 +63,38 @@ main {
     margin-bottom: 10px;
 }
 
-
-.main {
-    float: left;
-    width: 50%;
-    height: 100vh;
-    padding: 50px;
-
-}
-
-/* 회원탈퇴 */
-
-#mkhr {
+hr {
     background: #256BF4;
     height: 3px;
     border: 0;
     border-radius: 10px 10px 10px 10px;
 }
 
-#container_check {
-    margin: 20px;
+.main {
+    float: left;
+    width: 65%;
+    height: auto;
+    padding: 50px;
+        border-left: 1px solid #B7B7B7;
+}
+
+/* 회원탈퇴 */
+
+
+
+
+.container_check1 {
+    font-weight: bold;
+    font-size: 20px;
+    margin: 15px 0px 8px 0px;;
+}
+
+.container_check2 {
+    margin: 8px 0px 15px 0px;;
+}
+
+.container_check3 {
+    margin: 15px 0px 15px 0px;;
 }
 
 .result_btn {
@@ -108,20 +117,59 @@ main {
     align-items: center;
 }
 
-.textbox {
-    width: 200px;
-    height: 100px;
-    padding: 10px;
-    margin-bottom: 20px;
+#text-container {
+    margin-top: 20px;
 }
 
 #bluebox {
     border: 2px solid #256BF4;
-
 }
 
 /* 회색 테두리를 가진 텍스트 상자 스타일 */
-#memo {
-    border: 2px solid gray;
 
+#memo {
+    font-size: 20px;
+    margin-top: 20px;
+    height: auto;
+}
+
+textarea {
+    border-radius: 10px;
+    resize: none;
+    border: 2.5px solid rgba(37.00000159442425, 107.00000122189522, 244.0000006556511, 1);
+    width: 820px;
+    height: auto;
+    padding: 10px;
+    overflow: hidden;
+    margin-left: 3px;
+    outline: none;
+}
+
+textarea::placeholder {
+  color: rgb(150);
+}
+
+#btn {
+    background-color: rgba(37.00000159442425, 107.00000122189522, 244.0000006556511, 1);
+    width: 70px;
+    height: 25px;
+    border-radius: 75px;
+    border: none;
+    color: rgba(255, 255, 255, 1);
+    text-align: center;
+    position: relative;
+    left: 777px;
+    top: -5px;
+    cursor: pointer;
+}
+
+#btn:hover {
+    background-color: #ffffff;
+    color: #256BF4;
+    border: 2px solid #256BF4;
+}
+
+.main p {
+    color: #256BF4;
+    display: inline-block;
 }

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="layout">
+<head>
+    <meta charset="UTF-8">
+    <title>구인글 게시판: 게시물 상세</title>
+    <link rel="stylesheet" th:href="@{/style/recruit_result.css}">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans KR&display=swap" rel="stylesheet">
+    <script th:inline="javascript">
+    var msg=[[${msg}]];
+    if(msg != null){
+      alert(msg);
+    }
+  </script>
+</head>
+<th:block layout:fragment="content">
+<body>
+
+<main>
+    <div class="job">
+        <div>
+            <h1 >제목 :[[${recruitDO.title}]] </h1>  <!--RECRUIT_TITLE 제목  -->
+        </div>
+        <hr>
+        <div>
+            유튜버 정보 들어가는 칸 (이미지/채널명/인증마크) <!--RECRUIT_TITLE -->
+        </div>
+        <div>
+            채널 카테고리 :[[${categories}]]<br>
+            마감일 : [[${recruitDO.deadline}]]<br>       <!--DEADLINE 마감일   -->
+            직무 : [[${recruitDO.duty}]]<br>              <!--DUTY 직무 -->
+            작업량 : [[${recruitDO.workLoad}]]<br>
+            자격 요건 :[[${recruitDO.RequireMent}]]<br>
+            급여 : [[${recruitDO.salary}]]<br>
+            급여 상세 : [[${recruitDO.salaryDetail}]]<br>
+            우대 사항 : [[${recruitDO.preference}]]<br> <!-- PREFERENCE 우대사항   -->
+            편집 툴 : [[${tools}]]<br>
+            근무 환경 : [[${recruitDO.environment}]]<br>   <!--ENVIRONMENT 근무 환경  -->
+            복리 후생 : [[${recruitDO.welfare}]]<br>    <!--WELFARE 복리후생 -->
+            상세 모집 내용 : [[${recruitDO.recruit_Detail}]] <br>   <!--RECRUIT_DETAIL 상세모집 내용  -->
+        </div>
+        <br>
+        Orginal Video link or Channel link
+        <p>[[${recruitDO.original_link}]]</p>
+        <meta name="description" content="설명">
+        <!--편집자 회원-->
+        <div class="paging1">
+            <a th:if="${session.type == '편집자'}" class="btn" th:href="@{/apply(recruitNo= ${recruitDO.recruitNo})}" >지원하기</a>
+        </div>
+        <!--작성자(유튜버)-->
+        <a href = "#" th:if ="${recruitDO.email}==${session.email}"  class="btn">수정하기</a>
+
+        <a class="btn" role="button" th:href="@{/recruit_delete(email=${recruitDO.email})}" th:if="${session.type}=='유튜버'">삭제</a>
+    </div>
+</main>
+
+</body>
+</th:block>
+</html>

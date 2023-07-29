@@ -14,7 +14,7 @@
         <ul>
           <li><a th:href="@{/recruit_board}">구인글 게시판</a></li>
           <li><a th:href="@{/portfolio_board}">포트폴리오</a></li>
-          <li><a th:href="@{/Q&A_board}">고객센터</a></li>
+          <li><a th:href="@{/Qna_question}">고객센터</a></li>
         </ul>
       </nav>
 
@@ -25,13 +25,12 @@
 
       <div th:if="${session.email != null}" class = "accountlogin">
         <a href="#"><span th:text="${session.nickname}"></span>님</a>
-        <a th:href="@{/myPage}">내 정보보기</a>
+        <a th:if="${session.type eq '편집자' || session.type eq '유튜버'}" th:href="@{/myPage}">마이 페이지</a>
+        <a th:if="${session.type eq '관리자'}" th:href="@{/memberManage}">회원관리</a>
         <form th:action = "@{/logout}" method = "POST">
           <input type = "submit" class = "logoutButton" value = "로그아웃"/>
         </form>
       </div>
-
-
     </div>
   </header>
 

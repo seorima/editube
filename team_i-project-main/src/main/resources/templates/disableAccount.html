@@ -35,26 +35,17 @@
   <main>
     <nav class="sideBar">
       <ul>
-
         <div class=menuPart>
           <h2>마이 페이지</h2>
-          <li><a href="#">내 기본정보</a></li>
-          <!-- 로그인 시 회원 구분 값 저장, if문 사용 -->
-          <!-- 관리자 -->
-          <li><a href="#">회원관리</a></li>
+          <li><a th:href="@{/myPage}">내 기본정보</a></li>
 
-          <!-- 유튜버
-          <li><a href="#">작성한 구인글</a></li>
-          <li><a href="#">경력 인증 요청 확인</a></li>
-          -->
+          <li><a th:href="@{/my_recruit}" th:if="${session.type}=='유튜버'">작성한 구인글</a></li>
 
-          <!-- 편집자
-          <li><a href="#">지원현황 확인</a></li>
-          <li><a href="#">내 포트폴리오 보기</a></li>
-          -->
-
+          <li><a th:href="@{/applynow}" th:if="${session.type}=='편집자'">지원현황 확인</a></li>
+          <li><a th:href="@{/myPage/portfolio_result}" th:if="${session.type}=='편집자'">내 포트폴리오 보기</a></li>
+          <li class="active"><a th:href="@{/disableAccount}" class="disable">회원탈퇴 </a></li>
         </div>
-        <li class="active"><a href="#" class="disable">회원탈퇴 </a></li>
+
       </ul>
     </nav>
 
@@ -66,6 +57,10 @@
         <div class="textbox">
           <h4>회원탈퇴 신청에 앞서 아래의 사항을 반드시 확인 하세요.</h4><br/>
           <p>회원탈퇴를 신청하시면 해당 아이디는 즉시 탈퇴 처리됩니다.</p>
+          <p>회원 정보 및 게시물 등의 모든 이용 내역이 삭제됩니다.</p>
+          <p>회원탈퇴 후에는 동일 아이디로 다시 가입하실 수 있으나</p>
+          <p>탈퇴 이전의 정보는 저장되지 않습니다.</p><br />
+          <p>위 사항에 동의하십니까?</p>
         </div>
 
 

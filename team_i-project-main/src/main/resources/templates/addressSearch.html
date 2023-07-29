@@ -1,15 +1,11 @@
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" th:href="@{/style/addressSearch.css}">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans KR&display=swap" rel="stylesheet">
 
-
-    <style>
-        html,body{
-            font-size: 5px;
-        }
-
-    </style>
     <script>
 
         function getAddr(){
@@ -47,6 +43,7 @@
         function makeListJson(jsonStr){
             var htmlStr = "";
             htmlStr += "<table onclick='send()'>";
+            htmlStr += "<thead><th>주소를 선택하세요</th></tr></thead>";
             $(jsonStr.results.juso).each(function(){
                 htmlStr += "<tr>";
                 htmlStr += "<td id='"+this.roadAddr+"' onclick='sendData(this.id)'>"+this.roadAddr+"</td>";
@@ -115,18 +112,19 @@
             window.close();
         }
     </script>
-    <title>Insert title here</title>
+    <title>주소 찾기</title>
 </head>
 <body>
 <input hidden="hidden" id="addressInput" type="text" />
 
 <form name="form" id="form" method="post">
+    <div id="search-container">
     <input hidden="hidden" type="text" name="currentPage" value="1"/>
     <input hidden="hidden" type="text" name="countPerPage" value="10"/><!-- 요청 변수 설정 (페이지당 출력 개수. countPerPage 범위 : 0 < n <= 100) -->
     <input hidden="hidden" type="text" name="resultType" value="json"/>
     <input hidden="hidden" type="text" name="confmKey" value="U01TX0FVVEgyMDIzMDUwMjIwNTEyMTExMzczOTg=" />
     <input type="text" name="keyword" value="" onkeydown="enterSearch();"/><!-- 요청 변수 설정 (키워드) -->
-    <input type="button" onClick="getAddr();" value="주소검색하기"/>
+        <input type="button" onClick="getAddr();" value="주소검색하기"/></div>
     <div id="list" ></div><!-- 검색 결과 리스트 출력 영역 -->
 </form>
 </body>

@@ -27,11 +27,13 @@ hr {
     height: 3px;
     border: 0;
     border-radius: 10px 10px 10px 10px;
+    margin: 5px 0;
 }
 
 .job {
     width: 60%;
     margin: 40px auto;
+    height: auto;
 }
 
 .btn {
@@ -43,9 +45,12 @@ hr {
     border-radius: 98px;
     margin: 5px;
     float: right;
+    margin-top:40px;
 
 }
-
+#originallink{
+    width: 650px;
+}
 .btn:hover {
     background-color: #0069d9;
 }
@@ -57,5 +62,51 @@ hr {
 
 .input2 {
     width: 650px;
-    height: 150px;
+    height: 100px;
+}
+
+label{
+    font-size:17px;
+}
+
+#inputValue label{
+    width: 100px;
+    margin-bottom: 4px;
+}
+
+#inputValue input{
+    margin-bottom: 4px;
+}
+
+#recruitWriteForm input{
+    font-size: 15px;
+    border: 0;
+    border-radius: 15px;
+    outline: none;
+    padding-left: 10px;
+    background-color: rgb(233, 233, 233)
+}
+
+textarea{
+    padding-top: 5px;
+    margin-top: 10px;
+    font-size: 15px;
+    border: 0;
+    border-radius: 15px;
+    outline: none;
+    padding-left: 10px;
+    background-color: rgb(233, 233, 233);
+    height: auto;
+    overflow: hidden;
+    resize:none;
+}
+
+.edit {
+    margin-top: 10px;
+}
+
+.job p {
+    color: #256BF4;
+    display: inline-block;
+    font-weight: bold;
 }

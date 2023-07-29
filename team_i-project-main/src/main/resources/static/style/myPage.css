@@ -9,15 +9,13 @@ main {
     display: flex;
     margin: 0 auto;
     margin-top: 5%;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .sideBar {
     float: left;
     width: 26.33%;
-    border-right: 1px solid #333;
-    /*구분선*/
-    height: 100vh;
+    height: auto;
 }
 
 .sideBar ul {
@@ -35,7 +33,7 @@ main {
 }
 
 .sideBar li.active a {
-    color: black;
+    color: #256BF4;
     text-decoration: none;
     font-weight: bold;
     font-size: 18px;
@@ -63,8 +61,9 @@ main {
 .main {
     float: left;
     width: 65%;
-    height: 100vh;
+    height: auto;
     padding: 50px;
+        border-left: 1px solid #B7B7B7;
 
 }
 
@@ -171,4 +170,25 @@ input[type="text"] {
 #birth_date {
     border: none;
     background-color: transparent;
+}
+
+.searchAddrButton {
+  background-color: rgba(37.00000159442425, 107.00000122189522, 244.0000006556511, 1);
+  width: 100px;
+  height: 45px;
+  position: absolute;
+  right: -110px;
+  border-radius: 30px;
+  border: none;
+  color: rgba(255, 255, 255, 1);
+  text-align: center;
+  font-size: 17px;
+  transform: translateY(-50%);
+  top: 50%;
+}
+
+.searchAddrButton:hover {
+  background-color: #ffffff;
+  color: #256BF4;
+  border: 2px solid #256BF4;
 }

@@ -9,15 +9,13 @@ main {
     display: flex;
     margin: 0 auto;
     margin-top: 5%;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .sideBar {
     float: left;
     width: 26.33%;
-    border-right: 1px solid #333;
-    /*구분선*/
-    height: 100vh;
+    height: auto;
 }
 
 .sideBar ul {
@@ -35,7 +33,7 @@ main {
 }
 
 .sideBar li.active a {
-    color: black;
+    color: #256BF4;
     text-decoration: none;
     font-weight: bold;
     font-size: 18px;
@@ -122,8 +120,9 @@ hr {
 .main {
     float: left;
     width: 65%;
-    height: 100vh;
+    height: auto;
     padding: 50px;
+        border-left: 1px solid #B7B7B7;
 
 }
 
@@ -134,7 +133,6 @@ hr {
 }
 
 .post {
-    border-bottom: 1px solid #ddd;
     padding: 10px 0;
     display: flex;
     align-items: center;
@@ -170,4 +168,44 @@ hr {
 
 .btn_cancel:hover {
     background-color: #868686;
+}
+
+.paging {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 0;
+}
+
+.paging a {
+    display: inline-block;
+    margin-left: 10px;
+    padding: 5px 10px;
+    border-radius: 100px;
+    font-size: 12px;
+}
+
+.paging a:first-child {
+    margin-left: 0;
+}
+
+.paging a.bt {
+    border: 1px solid #ffffff;
+    background: #256BF4;
+    color: #fff;
+}
+
+.paging a.num {
+    border: 1px solid #256BF4;
+    font-weight: 600;
+    color: #08090a;
+}
+
+.paging a.num.on {
+    background: #256BF4;
+    color: #fff;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
 }

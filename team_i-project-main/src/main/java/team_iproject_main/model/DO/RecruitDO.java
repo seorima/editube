@@ -1,10 +1,14 @@
 package team_iproject_main.model.DO;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
+@NoArgsConstructor
+@AllArgsConstructor
 @Data
 public class RecruitDO { //구인글 (유튜버)
     private int recruitNo; //게시글 숫자? fk값?
@@ -22,5 +26,13 @@ public class RecruitDO { //구인글 (유튜버)
     private LocalDate deadline; //마감일      LocalDateTime  // LocalDate 둘중 무엇을 쓸지 나중에 수정 해야 합니다
     private String original_link;
     private LocalDateTime postdate;
+    private String channel_name;
+    private boolean overdate; //0512주현 수업시간중에 수정
+
+
+    @Override
+    public String toString() {
+        return recruitNo + title + deadline + channel_name;
+    }
 
 }

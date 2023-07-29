@@ -27,6 +27,86 @@
     window.onload = init;
 
   </script>
+  <script th:inline="javascript">
+        var addressSearch = [[@{/address-search}]];
+
+        function save(){
+            const useremail = document.getElementById("email").value;
+            const password1 = document.getElementById("password").value;
+            const password2 = document.getElementById("confirmPassword").value;
+            const username = document.getElementById("name").value;
+            const usernickname = document.getElementById("nickname").value;
+            const userphone = document.getElementById("phone_number").value;
+            const address1 = document.getElementById("input-address").value;
+            const address2 = document.getElementById("input-detail-address").value;
+            const gender = document.getElementById("gender").value;
+            const userbirth = document.getElementById("birth_date").value;
+
+            const userdata = {
+                email : useremail,
+                password : password1,
+                confirmPssword : password2,
+                name : username,
+                nickname : usernickname,
+                phone_number : userphone,
+                address : address1,
+                detail_addr : address2,
+                gender : gender,
+                birth_date : userbirth,
+            }
+
+            $.ajax({
+                url :"/try-join",
+                type:"post",
+                dataType : "json", // ajax가 받을때 자료형
+                contentType:"application/json", // 보낼때 자료형
+                data: JSON.stringify(userdata),
+                success:function(data){
+                    console.log(data)
+
+                    if(data.result == "성공!"){
+                        alert("회원가입 성공")
+                        location.href = "/";
+                    }else{
+                        alert("가입 실패 ㅠㅠ")
+                    }
+
+                    //console.log(result);
+                },
+                error: function (request, status, error){
+                    console.log(error)
+                    console.log(status)
+                    console.log(request)
+                    //실패햇을때 성공 로직.
+                    alert("가입 실패");
+                }
+            })
+        }
+
+        function road() {
+             const popup = window.open(addressSearch,"Popup", "width=800, height=700");
+
+             popup.onbeforeunload=(data)=>{
+                 console.log(data)
+                 console.log("데이터 체크")
+            }
+             // 팝업창에 데이터 쓰기
+             popup.document.write(data);
+        }
+
+        function test(){
+            $.ajax({
+                url: "https://business.juso.go.kr/addrlink/addrLinkUrl.do?confmKey=U01TX0FVVEgyMDIzMDUwMjE0MTI1MDExMzczNzM=&returnUrl=http://localhost:3030/road-return&resultType=4",
+                type: "GET",
+            })
+        }
+    </script>
+  <script th:inline="javascript">
+    var Msg = [[${msg}]];
+    if (Msg != null){
+      alert(Msg);
+    }
+  </script>
 </head>
 
 <th:block layout:fragment="content">
@@ -37,17 +117,14 @@
         <div class=menuPart>
           <h2>마이 페이지</h2>
           <li class="active"><a th:href="@{/myPage}">내 기본정보</a></li>
-          <!-- 로그인 시 회원 구분 값 저장, if문 사용 -->
 
-          <!--유튜버-->
           <li><a th:href="@{/my_recruit}" th:if="${session.type}=='유튜버'">작성한 구인글</a></li>
-          <li><a th:href="@{#}" th:if="${session.type}=='유튜버'">경력 인증 요청 확인</a></li>
 
-          <!--편집자-->
           <li><a th:href="@{/applynow}" th:if="${session.type}=='편집자'">지원현황 확인</a></li>
           <li><a th:href="@{/myPage/portfolio_result}" th:if="${session.type}=='편집자'">내 포트폴리오 보기</a></li>
+          <li><a th:href="@{/disableAccount}" class="disable">회원탈퇴 </a></li>
         </div>
-        <li><a th:href="@{/disableAccount}" class="disable">회원탈퇴 </a></li>
+
       </ul>
     </nav>
 
@@ -88,9 +165,35 @@
                      th:value="${user.nickname}" name="nickname" >
             </div>
           </div>
+          <button type="button" class=searchAddrButton onclick="ConfirmNickname()">닉네임 확인</button>
         </div>
+        <script th:inline="javascript">
+        var confirmNickname = [[@{/ConfirmNickname}]];
 
+        function ConfirmNickname() {
+            var inputValue = document.getElementById("nickname").value;
+            if (document.getElementById("nickname").value.length == 0) {
+                 alert("입력란이 공란입니다.");
+            }
+            else {
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", confirmNickname, true);
+            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    var newValue = xhr.responseText;
+                    var oldValue = 'false';
+                    var comparisonResult = oldValue === newValue ? "사용가능한 닉네임입니다." : "중복된 닉네임입니다.";
+                        alert(comparisonResult);
 
+                  }
+                }
+            };
+            var data = JSON.stringify({ "nickname": inputValue });
+            xhr.send(data);
+        }
+    </script>
+        <div class="duplicateNickname" th:utext="${duplicatePhoneNumber}"></div>
         <div class="phonePart">
           <div class=phoneArea>
             <span class="phoneText">휴대전화</span>
@@ -100,17 +203,45 @@
                      th:value="${user.phone_number}" name="phone_number" >
             </div>
           </div>
+          <button type="button" class=searchAddrButton onclick="ConfirmPhoneNumber()">번호 확인</button>
         </div>
+
+        <script th:inline="javascript">
+        var confirmPhoneNumber = [[@{/ConfirmPhoneNumber}]]
+
+        function ConfirmPhoneNumber() {
+            var inputValue = document.getElementById("phone_number").value;
+            if (document.getElementById("phone_number").value.length == 0) {
+                 alert("입력란이 공란입니다.");
+            }
+            else {
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", confirmPhoneNumber, true);
+            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    var newValue = xhr.responseText;
+                    var oldValue = 'false';
+                    var comparisonResult = oldValue === newValue ? "사용가능한 번호입니다." : "중복된 번호입니다.";
+                    alert(comparisonResult);
+                }
+              }
+            };
+            var data = JSON.stringify({ "phone_number": inputValue });
+            xhr.send(data);
+        }
+    </script>
 
         <div class="addressPart">
           <div class=addressArea>
-            <span class="addressText">주소</span>
+            <span class="addressText">도로명 주소</span>
             <div class=addressInput>
               <input type="text" id="address" placeholder="서울특별시 강남구 언주로 508" class="address"
                      style="border: none; background: transparent;"
                      th:value="${user.address}" name="address" >
             </div>
           </div>
+          <button type="button" onclick="road()" class=searchAddrButton>주소찾기</button>
         </div>
 
         <div class="detailaddressPart">

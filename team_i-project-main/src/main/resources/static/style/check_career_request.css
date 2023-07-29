@@ -9,15 +9,13 @@ main {
     display: flex;
     margin: 0 auto;
     margin-top: 5%;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .sideBar {
     float: left;
     width: 33.33%;
-    border-right: 1px solid #333;
-    /*구분선*/
-    height: 100vh;
+    height: auto;
 }
 
 .sideBar ul {
@@ -36,7 +34,7 @@ main {
 
 
 .sideBar li.active a {
-    color: black;
+    color: #256BF4;
     text-decoration: none;
     font-weight: bold;
     font-size: 18px;
@@ -76,9 +74,9 @@ hr {
 .main {
     float: left;
     width: 50%;
-    height: 100vh;
+    height: auto;
     padding: 50px;
-
+        border-left: 1px solid #B7B7B7;
 }
 
 /* 회원탈퇴 */
